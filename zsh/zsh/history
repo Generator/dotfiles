@@ -565,3 +565,4 @@
 : 1417637920:0;ln -s Dropbox/Linux/dotfiles /home/aj/SparkleShare/dotfiles
 : 1417637938:0;ln -s $HOME/Dropbox/Linux/dotfiles /home/aj/SparkleShare/dotfiles
 : 1417639011:0;sparkleshare --help
+: 1417639198:0;vim .zshrc 
