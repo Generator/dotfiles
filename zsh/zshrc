@@ -1,0 +1,139 @@
+#------------------------------
+# Other sources
+#------------------------------
+module_path=($module_path /usr/lib/zpython) 
+export EDITOR=vim
+export PATH=$PATH:$HOME/.local/bin
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/aliases.zsh
+#source ~/.zsh/colors.zsh
+source ~/.zsh/base16.zsh
+source ~/.zsh/keybinds.zsh
+source ~/.zsh/screen.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/autosuggestions.zsh
+source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
+fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
+
+#------------------------------
+# zsh-syntax-highlighting
+#------------------------------
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
+
+#------------------------------ 
+# Enable autosuggestions automatically
+#------------------------------ 
+zle-line-init() {
+		    zle autosuggest-start
+	}
+	zle -N zle-line-init
+
+	# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+	# zsh-autosuggestions is designed to be unobtrusive)
+	bindkey '^T' autosuggest-toggle
+	# EOF
+	# Accept suggestions without leaving insert mode
+	bindkey '^f' vi-forward-word
+	# or
+	# bindkey '^f' vi-forward-blank-word
+
+#------------------------------
+# TERM Settings
+#------------------------------
+[ -n "$TMUX" ] && export TERM=screen-256color
+[ -n "$SCREEN" ] && export TERM=screen-256color
+
+#------------------------------
+# SSH Agent
+#------------------------------
+SSH_AUTH_SOCK=$(ss -xl | grep -o '/run/user/1000/keyring-.*/ssh')
+[ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK 
+
+#------------------------------
+# setup options
+#------------------------------
+
+setopt appendhistory     # append history list to the history file
+setopt auto_cd           # perform the cd command to that directory
+setopt AUTO_PARAM_SLASH  # adds slash at end of tabbed dirs
+setopt CORRECT           # corrects spelling
+#setopt CORRECT_ALL       # corrects spelling
+setopt completeinword    # not just at the end
+setopt extendedglob      # Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename generation, etc.
+setopt hash_list_all     # is hashed first
+setopt HIST_IGNORE_DUPS  # Prevent from putting duplicate lines in the history
+setopt nobeep            # avoid "beep"ing
+setopt nomatch           # If a pattern for filename generation has no matches, print an error
+setopt nonomatch         # try to avoid the 'zsh: no matches found...'
+setopt noshwordsplit     # use zsh style word splitting
+setopt notify            # report the status of backgrounds jobs immediately
+setopt pushd_ignore_dups # don't push the same dir twice
+setopt unset             # don't error out when unset parameters are used
+
+
+#------------------------------
+# Command Completion
+#------------------------------
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list '' '+m:{a-z}={A-Z}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
+zstyle ':completion:*' max-errors 1
+zstyle :compinstall filename '$HOME/.zshrc'
+zstyle ':completion:*' rehash true # auto rehash commands
+
+# add colors to completions
+# general completion
+#--------------------------------------------------
+ #~ zstyle ':completion:*:descriptions' format $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
+#--------------------------------------------------
+#--------------------------------------------------
+# zstyle ':completion:*:corrections' format $'%{\e[0;32m%}%d (errors: %e)%}'
+#--------------------------------------------------
+zstyle ':completion:*:messages' format '%d'
+#~
+zstyle ':completion:*:warnings' format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d'
+#~
+#~ # zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+#~ # zstyle ':completion:*' format 'completing %d'
+#~
+zstyle ':completion:*' format $'%{\e[0;32m%}completing %B%d%b%{\e[0m%}'
+#~
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
+#~
+#~ # autocompletion with arrow-key driven interface
+zstyle ':completion:*' menu select
+
+#------------------------------
+# History stuff
+#------------------------------
+HISTFILE=~/.zsh/history
+HISTSIZE=500
+SAVEHIST=500
+
+#------------------------------
+# Comp stuff
+#------------------------------
+
+zmodload -ap zsh/parameter parameters
+zmodload zsh/complist
+autoload -Uz compinit
+autoload -Uz bashcompinit
+compinit
+bashcompinit
+zstyle :compinstall filename '${HOME}/.zshrc'
+#~ #~
+zstyle ':completion:*:pacman:*' force-list always
+zstyle ':completion:*:*:pacman:*' menu yes select
+#~ #~
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+#~ #~
+zstyle ':completion:*:*:killall:*' menu yes select
+zstyle ':completion:*:killall:*' force-list always
+
