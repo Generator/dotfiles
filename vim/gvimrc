@@ -1,0 +1,8 @@
+" GVim 
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+set guiheadroom=0
+color lucius
+LuciusLightHighContrast
+
+" Start Maximized
+set lines=60 columns=179
