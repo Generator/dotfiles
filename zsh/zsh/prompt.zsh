@@ -91,9 +91,9 @@ oh_my_zsh(){
 # Dont set grafical prompt in linux console
 case $TERM in
 		xterm*|rxvt*|screen*)
-				oh_my_zsh
+				#oh_my_zsh
 				#powerline_
-				#lightline
+				lightline
 				#setprompt
 				;;
 		linux)
