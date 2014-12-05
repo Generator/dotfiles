@@ -94,7 +94,7 @@ oh_my_zsh(){
 antigen_start(){
 	
 	# Source file
-	source ~/.zsh/antigenrc.zsh
+	source ~/.zsh/framework/antigen/antigen.zsh
 	
 	# Load the oh-my-zsh's library.
 	antigen use oh-my-zsh
