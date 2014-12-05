@@ -88,6 +88,35 @@ oh_my_zsh(){
 		. $HOME/.zsh/framework/oh-my-zsh/oh-my-zsh.sh
 }
 
+#------------------------------
+# Antigen
+#------------------------------
+antigen_start(){
+	
+	# Load the oh-my-zsh's library.
+	antigen use oh-my-zsh
+	
+	# Bundles from the default repo (robbyrussell's oh-my-zsh).
+	#antigen bundle git
+	#antigen bundle heroku
+	#antigen bundle pip
+	#antigen bundle lein
+	#antigen bundle command-not-found
+	
+	# Syntax highlighting bundle.
+	antigen bundle zsh-users/zsh-syntax-highlighting
+	
+	# Load the theme.
+	#antigen theme robbyrussell
+	
+	# Tell antigen that you're done.
+	antigen apply
+	
+	# Source file
+	source ~/.zsh/antigenrc.zsh
+	
+}
+
 # Dont set grafical prompt in linux console
 case $TERM in
 		xterm*|rxvt*|screen*)
