@@ -1,55 +1,4 @@
 #------------------------------
-# Other sources
-#------------------------------
-module_path=($module_path /usr/lib/zpython) 
-export EDITOR=vim
-export PATH=$PATH:$HOME/.local/bin
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/prompt.zsh
-source ~/.zsh/aliases.zsh
-#source ~/.zsh/colors.zsh
-source ~/.zsh/base16.zsh
-source ~/.zsh/keybinds.zsh
-source ~/.zsh/screen.zsh
-source ~/.zsh/plugins/zsh-autosuggestions/autosuggestions.zsh
-#source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
-fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
-
-#------------------------------
-# zsh-syntax-highlighting
-#------------------------------
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
-
-#------------------------------ 
-# Enable autosuggestions automatically
-#------------------------------ 
-zle-line-init() {
-		    zle autosuggest-start
-	}
-	zle -N zle-line-init
-
-	# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-	# zsh-autosuggestions is designed to be unobtrusive)
-	bindkey '^T' autosuggest-toggle
-	# EOF
-	# Accept suggestions without leaving insert mode
-	bindkey '^f' vi-forward-word
-	# or
-	# bindkey '^f' vi-forward-blank-word
-
-#------------------------------
-# TERM Settings
-#------------------------------
-[ -n "$TMUX" ] && export TERM=screen-256color
-[ -n "$SCREEN" ] && export TERM=screen-256color
-
-#------------------------------
-# SSH Agent
-#------------------------------
-SSH_AUTH_SOCK=$(ss -xl | grep -o '/run/user/1000/keyring-.*/ssh')
-[ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK 
-
-#------------------------------
 # setup options
 #------------------------------
 
@@ -137,3 +86,47 @@ zstyle ':completion:*:kill:*' force-list always
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
+#------------------------------
+# Other sources
+#------------------------------
+module_path=($module_path /usr/lib/zpython) 
+export EDITOR=vim
+export PATH=$PATH:$HOME/.local/bin
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/aliases.zsh
+#source ~/.zsh/colors.zsh
+source ~/.zsh/base16.zsh
+source ~/.zsh/keybinds.zsh
+source ~/.zsh/screen.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/autosuggestions.zsh
+#source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
+fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
+
+#------------------------------
+# zsh-syntax-highlighting
+#------------------------------
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
+
+#------------------------------ 
+# Enable autosuggestions automatically
+#------------------------------ 
+zle-line-init() {
+		    zle autosuggest-start
+	}
+	zle -N zle-line-init
+
+	# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+	# zsh-autosuggestions is designed to be unobtrusive)
+	bindkey '^T' autosuggest-toggle
+	# EOF
+	# Accept suggestions without leaving insert mode
+	bindkey '^f' vi-forward-word
+	# or
+	# bindkey '^f' vi-forward-blank-word
+	
+#------------------------------
+# SSH Agent
+#------------------------------
+SSH_AUTH_SOCK=$(ss -xl | grep -o '/run/user/1000/keyring-.*/ssh')
+[ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK 
