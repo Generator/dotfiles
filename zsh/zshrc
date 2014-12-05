@@ -92,7 +92,6 @@ zstyle ':completion:*:killall:*' force-list always
 module_path=($module_path /usr/lib/zpython) 
 export EDITOR=vim
 export PATH=$PATH:$HOME/.local/bin
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/prompt.zsh
 source ~/.zsh/aliases.zsh
 #source ~/.zsh/colors.zsh
@@ -125,8 +124,3 @@ zle-line-init() {
 	# or
 	# bindkey '^f' vi-forward-blank-word
 	
-#------------------------------
-# SSH Agent
-#------------------------------
-SSH_AUTH_SOCK=$(ss -xl | grep -o '/run/user/1000/keyring-.*/ssh')
-[ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK 

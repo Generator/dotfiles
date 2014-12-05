@@ -105,6 +105,7 @@ antigen_start(){
 	
 	# Syntax highlighting bundle.
 	antigen bundle zsh-users/zsh-syntax-highlighting
+	antigen bundle zsh-users/zsh-completions src
 	
 	# Load the theme.
 	#antigen theme robbyrussell
