@@ -99,7 +99,7 @@ source ~/.zsh/base16.zsh
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/screen.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/autosuggestions.zsh
-#source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
+source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
 fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
 
 #------------------------------
