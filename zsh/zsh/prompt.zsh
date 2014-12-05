@@ -73,7 +73,7 @@ oh_my_zsh(){
         # Auto Update
         DISABLE_AUTO_UPDATE="false"
 		# Path to your oh-my-zsh configuration.
-		ZSH=$HOME/.zsh/oh-my-zsh
+		ZSH=$HOME/.zsh/framework/oh-my-zsh
 
 		# Set name of the theme to load.
 		ZSH_THEME="agnoster-nl"
@@ -85,7 +85,7 @@ oh_my_zsh(){
 		plugins=(extract git systemd tmux)
 
 		# Source file
-		. $HOME/.zsh/oh-my-zsh/oh-my-zsh.sh
+		. $HOME/.zsh/framework/oh-my-zsh/oh-my-zsh.sh
 }
 
 # Dont set grafical prompt in linux console
