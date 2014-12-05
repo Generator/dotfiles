@@ -122,7 +122,7 @@ antigen_start(){
 # Dont set grafical prompt in linux console
 case $TERM in
 		xterm*|rxvt*|screen*)
-				#oh_my_zsh
+				oh_my_zsh
 				antigen_start
 				#powerline_
 				#lightline
