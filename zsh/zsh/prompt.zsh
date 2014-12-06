@@ -111,6 +111,7 @@ antigen_start(){
 	antigen bundle unixorn/autoupdate-antigen.zshplugin
 	antigen bundle zsh-users/zsh-syntax-highlighting
 	antigen bundle zsh-users/zsh-completions src
+	antigen bundle tarruda/zsh-autosuggestions
 	
 	# Load the theme.
 	#antigen theme robbyrussell
