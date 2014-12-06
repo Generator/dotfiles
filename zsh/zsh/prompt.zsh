@@ -121,6 +121,9 @@ antigen_start(){
 	
 	# Options bullet-train-oh-my-zsh-theme
 	BULLETTRAIN_TIME_SHOW=false
+	
+	# Alias-tips
+	export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 }
 
 # Dont set grafical prompt in linux console
