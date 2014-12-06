@@ -121,7 +121,6 @@ antigen_start(){
 	
 	# Tell antigen that you're done.
 	antigen apply
-	antigen cleanup
 	
 	# Options bullet-train-oh-my-zsh-theme
 	BULLETTRAIN_TIME_SHOW=false
