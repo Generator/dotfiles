@@ -107,7 +107,8 @@ antigen_start(){
 	#antigen bundle lein
 	antigen bundle command-not-found
 	
-	# Syntax highlighting bundle.
+	# Bundles
+	antigen bundle unixorn/autoupdate-antigen.zshplugin
 	antigen bundle zsh-users/zsh-syntax-highlighting
 	antigen bundle zsh-users/zsh-completions src
 	
