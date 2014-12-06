@@ -82,7 +82,7 @@ oh_my_zsh(){
 		DEFAULT_USER=""
 
 		# Which plugins would you like to load?
-		plugins=(extract git systemd tmux)
+		plugins=(extract git systemd tmux alias-tips)
 
 		# Source file
 		#. $HOME/.zsh/framework/oh-my-zsh/oh-my-zsh.sh
