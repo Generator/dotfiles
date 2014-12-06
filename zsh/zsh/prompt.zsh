@@ -110,7 +110,6 @@ antigen_start(){
 	# Syntax highlighting bundle.
 	antigen bundle zsh-users/zsh-syntax-highlighting
 	antigen bundle zsh-users/zsh-completions src
-	antigen bundle djui/alias-tips
 	
 	# Load the theme.
 	#antigen theme robbyrussell
@@ -121,9 +120,6 @@ antigen_start(){
 	
 	# Options bullet-train-oh-my-zsh-theme
 	BULLETTRAIN_TIME_SHOW=false
-	
-	# Alias-tips
-	export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 }
 
 # Dont set grafical prompt in linux console
