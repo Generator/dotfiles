@@ -113,7 +113,7 @@ antigen_start(){
 	
 	# Load the theme.
 	#antigen theme robbyrussell
-	antigen theme caiogondim/bullet-train-oh-my-zsh-theme themes/bullet-train
+	antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 	
 	# Tell antigen that you're done.
 	antigen apply
