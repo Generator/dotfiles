@@ -71,7 +71,7 @@ powerline_(){
 oh_my_zsh(){
         
         # Auto Update
-        DISABLE_AUTO_UPDATE="false"
+        DISABLE_AUTO_UPDATE="true"
 		# Path to your oh-my-zsh configuration.
 		#ZSH=$HOME/.zsh/framework/oh-my-zsh
 
