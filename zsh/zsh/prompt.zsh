@@ -97,8 +97,8 @@ antigen_start(){
 	source ~/.zsh/framework/antigen/antigen.zsh
 	
 	# Load the oh-my-zsh's library.
-	#antigen use oh-my-zsh
-	antigen use prezto
+	antigen use oh-my-zsh
+	#antigen use prezto
 	
 	# Bundles from the default repo (robbyrussell's oh-my-zsh).
 	antigen bundle git
