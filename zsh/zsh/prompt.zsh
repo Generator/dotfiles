@@ -76,7 +76,7 @@ oh_my_zsh(){
 		#ZSH=$HOME/.zsh/framework/oh-my-zsh
 
 		# Set name of the theme to load.
-		ZSH_THEME="agnoster-nl"
+		#ZSH_THEME="agnoster-nl"
 
 		# agnoster theme settings
 		DEFAULT_USER=""
