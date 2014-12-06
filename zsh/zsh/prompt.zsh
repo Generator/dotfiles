@@ -86,10 +86,6 @@ oh_my_zsh(){
 
 		# Source file
 		#. $HOME/.zsh/framework/oh-my-zsh/oh-my-zsh.sh
-		
-		# Fix GREP_OPTIONS
-		export GREP_OPTIONS=""
-		alias grep="grep $GREP_OPTIONS"
 }
 
 #------------------------------
