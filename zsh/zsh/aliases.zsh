@@ -2,7 +2,7 @@
 # Aliases
 #------------------------------
 alias ls="ls --color --group-directories-first -h"
-alias grep='grep --colour=auto'
+#alias grep='grep --colour=auto'
 alias webshare='python -m SimpleHTTPServer 8080'
 #alias qemuctl='qemuctl -enable-kvm'
 alias vi='vim'
