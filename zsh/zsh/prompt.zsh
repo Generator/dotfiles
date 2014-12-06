@@ -112,6 +112,7 @@ antigen_start(){
 	antigen bundle zsh-users/zsh-syntax-highlighting
 	antigen bundle zsh-users/zsh-completions src
 	antigen bundle tarruda/zsh-autosuggestions
+	antigen bundle zsh-users/zsh-history-substring-search
 	
 	# Load the theme.
 	#antigen theme robbyrussell
