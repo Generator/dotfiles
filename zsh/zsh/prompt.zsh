@@ -73,7 +73,7 @@ oh_my_zsh(){
         # Auto Update
         DISABLE_AUTO_UPDATE="false"
 		# Path to your oh-my-zsh configuration.
-		ZSH=$HOME/.zsh/framework/oh-my-zsh
+		#ZSH=$HOME/.zsh/framework/oh-my-zsh
 
 		# Set name of the theme to load.
 		ZSH_THEME="agnoster-nl"
@@ -85,7 +85,7 @@ oh_my_zsh(){
 		plugins=(extract git systemd tmux)
 
 		# Source file
-		. $HOME/.zsh/framework/oh-my-zsh/oh-my-zsh.sh
+		#. $HOME/.zsh/framework/oh-my-zsh/oh-my-zsh.sh
 }
 
 #------------------------------
@@ -98,14 +98,14 @@ antigen_start(){
 	
 	# Load the oh-my-zsh's library.
 	#antigen use oh-my-zsh
-	#antigen use prezto
+	antigen use prezto
 	
 	# Bundles from the default repo (robbyrussell's oh-my-zsh).
-	#antigen bundle git
+	antigen bundle git
 	#antigen bundle heroku
 	#antigen bundle pip
 	#antigen bundle lein
-	#antigen bundle command-not-found
+	antigen bundle command-not-found
 	
 	# Syntax highlighting bundle.
 	antigen bundle zsh-users/zsh-syntax-highlighting
@@ -113,7 +113,7 @@ antigen_start(){
 	
 	# Load the theme.
 	#antigen theme robbyrussell
-	antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+	antigen theme caiogondim/bullet-train-oh-my-zsh-theme themes/bullet-train
 	
 	# Tell antigen that you're done.
 	antigen apply
