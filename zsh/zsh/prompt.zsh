@@ -118,6 +118,8 @@ antigen_start(){
 	# Tell antigen that you're done.
 	antigen apply
 	
+	# Options bullet-train-oh-my-zsh-theme
+	BULLETTRAIN_TIME_SHOW=false
 }
 
 # Dont set grafical prompt in linux console
