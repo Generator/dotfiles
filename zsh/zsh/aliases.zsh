@@ -3,7 +3,7 @@
 #------------------------------
 alias ls="ls --color --group-directories-first -h"
 #alias grep='grep --colour=auto'
-alias webshare='python -m SimpleHTTPServer 8080'
+alias webshare='python2 -m SimpleHTTPServer 8080'
 #alias qemuctl='qemuctl -enable-kvm'
 alias vi='vim'
 #alias urxvt="urxvt -geometry 94x30"
