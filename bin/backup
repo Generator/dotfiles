@@ -1,0 +1,19 @@
+#!/bin/sh
+### System Setup ###
+### backup directory for temp. file sotrage.
+BACKUP="/home/aj/Private"
+
+## Today + hour in 24h format ###
+DATE=$(date +%Y%m%d)
+
+### Remove old files
+rm $BACKUP/{weechat_*,pidgin*}
+
+### you can add or delete directories. They will be set to *.gz file
+tar -jcf $BACKUP/weechat_$DATE.tar.xz -C /home/aj/.weechat .  
+tar -jcf $BACKUP/pidgin_$DATE.tar.xz -C /home/aj/.purple .  
+#tar -jcf $BACKUP/hexchat_$DATE.tar.xz -C /home/aj/.config/hexchat .
+
+
+
+exit

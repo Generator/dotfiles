@@ -1,0 +1,10 @@
+#!/usr/bin/python2
+# EASY-INSTALL-ENTRY-SCRIPT: 'guessit==0.9.4','console_scripts','guessit'
+__requires__ = 'guessit==0.9.4'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('guessit==0.9.4', 'console_scripts', 'guessit')()
+    )

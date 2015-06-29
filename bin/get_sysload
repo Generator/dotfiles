@@ -1,0 +1,4 @@
+#!/bin/sh
+get_load=$(cut -d " " -f 1-3 /proc/loadavg)
+
+echo ⌛ $get_load

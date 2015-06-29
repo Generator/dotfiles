@@ -1,0 +1,3 @@
+#!/bin/sh
+git daemon --export-all --base-path=$(cd /home/aj/Dropbox/Linux/dotfiles; pwd) --reuseaddr --enable=receive-pack --detach 
+git-auto-sync run

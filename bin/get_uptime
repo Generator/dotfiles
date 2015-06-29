@@ -1,0 +1,2 @@
+#!/bin/sh
+uptime | /bin/sed -e 's/.* up *\(.*\)/\1/' -e 's/\(.*\),.* user.*/\1/' | /usr/bin/awk -F, '{print $1 $2}' | /usr/bin/tr -s ' '

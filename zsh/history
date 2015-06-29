@@ -1,0 +1,28 @@
+: 1435588338:0;mv zshrc zsh.new/
+: 1435588349:0;mv zsh.new/ zsh
+: 1435588353:0;ls
+: 1435588356:0;ls zsh/
+: 1435588362:0;ls zsh/zsh
+: 1435588365:0;ls
+: 1435588372:0;mv zprofile zsh/
+: 1435588503:0;ls
+: 1435588576:0;ls ../.local/bin
+: 1435588580:0;ls -l ../.local/bin
+: 1435588585:0;rm ../.local/bin
+: 1435588634:0;mv ../.gitconfig .
+: 1435588635:0;ls
+: 1435588663:0;mkdir bash
+: 1435588696:0;mv bashrc bash
+: 1435588702:0;mv bash_aliases bash
+: 1435588709:0;mv bashrc_root bash
+: 1435588728:0;ls bash/
+: 1435588846:0;ls
+: 1435588878:0;mkdir git
+: 1435588891:0;mv .gitconfig git/gitconfig
+: 1435588988:0;ls ../.ssh/
+: 1435589026:0;pacaur -Rsc git-annex-bin 
+: 1435589053:0;ls ../.ssh/
+: 1435589065:0;rm -rf ../.ssh/git-annex*
+: 1435589067:0;ls ../.ssh/
+: 1435589114:0;ls vim/
+: 1435589132:0;dotsync/bin/dotsync -L
