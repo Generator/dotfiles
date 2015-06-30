@@ -1,3 +1,6 @@
 [submodule "dotsync"]
 	path = dotsync
 	url = git@github.com:dotphiles/dotsync.git
+[submodule "zsh/zsh/framework/antigen"]
+	path = zsh/zsh/framework/antigen
+	url = git@github.com:zsh-users/antigen.git
