@@ -89,7 +89,7 @@ zstyle ':completion:*:killall:*' force-list always
 #------------------------------
 # Other sources
 #------------------------------
-module_path=($module_path /usr/lib/zpython) 
+#module_path=($module_path /usr/lib/zpython) 
 export EDITOR=vim
 export PATH=$PATH:$HOME/.local/bin
 source ~/.zsh/prompt.zsh
@@ -101,6 +101,12 @@ source ~/.zsh/screen.zsh
 #source ~/.zsh/plugins/zsh-autosuggestions/autosuggestions.zsh
 source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
 fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
+
+#------------------------------
+# Base16 Shell
+#------------------------------
+BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-monokai.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 #------------------------------
 # zsh-syntax-highlighting

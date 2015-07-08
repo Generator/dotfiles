@@ -1,3 +1,11 @@
-zsh/zsh/history
-zsh/zsh/history.LOCK
-zsh/zsh/history.new
+# zsh
+zsh/zsh/history*
+
+# weechat
+weechat/logs/
+
+# misc
+*.back
+*_fifo_*
+*.log
+*.stackdump

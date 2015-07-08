@@ -113,7 +113,7 @@ antigen_start(){
 	antigen bundle zsh-users/zsh-completions src
 	antigen bundle tarruda/zsh-autosuggestions
 	antigen bundle zsh-users/zsh-history-substring-search
-	antigen bundle chrissicool/zsh-256color
+	#antigen bundle chrissicool/zsh-256color
 	
 	# Load the theme.
 	#antigen theme robbyrussell
@@ -122,15 +122,59 @@ antigen_start(){
 	# Tell antigen that you're done.
 	antigen apply
 	
-	# Options bullet-train-oh-my-zsh-theme
-	BULLETTRAIN_TIME_SHOW=false
 }
 
-# Dont set grafical prompt in linux console
+#------------------------------
+# zgen
+#------------------------------
+zgen_start(){
+# load zgen
+source ~/.zsh/framework/zgen/zgen.zsh
+
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
+
+    zgen oh-my-zsh
+
+    # plugins
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/command-not-found
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load tarruda/zsh-autosuggestions
+    zgen load zsh-users/zsh-history-substring-search
+    zgen load Tarrasch/zsh-bd
+    zgen load caarlos0/zsh-git-sync
+
+    # bulk load
+    zgen loadall <<EOPLUGINS
+        zsh-users/zsh-history-substring-search
+EOPLUGINS
+    # ^ can't indent this EOPLUGINS
+
+    # completions
+    zgen load zsh-users/zsh-completions src
+
+    # theme
+    #zgen oh-my-zsh themes/arrow
+    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+    # save all to init script
+    zgen save
+fi
+}
+
+# Options bullet-train-oh-my-zsh-theme
+BULLETTRAIN_TIME_SHOW=false
+
+#------------------------------
+# Select prompt
+#------------------------------
 case $TERM in
 		xterm*|rxvt*|screen*)
-				oh_my_zsh
-				antigen_start
+				#oh_my_zsh
+				#antigen_start
+        zgen_start
 				#powerline_
 				#lightline
 				#setprompt
