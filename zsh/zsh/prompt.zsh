@@ -1,5 +1,5 @@
 # Reset prompt
-#prompt off 
+prompt off 
 
 # Change xterm to xterm-256color
 case $TERM in
