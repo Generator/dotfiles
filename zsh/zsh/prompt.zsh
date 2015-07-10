@@ -1,5 +1,7 @@
 # Reset prompt
-prompt off 
+if [[ "$OSTYPE" == "linux"* ]]; then
+prompt off
+fi
 
 # Change xterm to xterm-256color
 case $TERM in
