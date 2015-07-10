@@ -110,8 +110,8 @@ fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
 #------------------------------
 # Base16 Shell
 #------------------------------
-BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-monokai.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-monokai.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 #------------------------------
 # zsh-syntax-highlighting
