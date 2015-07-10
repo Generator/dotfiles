@@ -7,9 +7,9 @@
 [submodule "shell/colors/base16-shell"]
 	path = shell/colors/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
-[submodule "vim"]
-	path = vim
-	url = https://github.com/dotphiles/dotvim.git
 [submodule "zsh/zsh/framework/zgen"]
 	path = zsh/zsh/framework/zgen
 	url = https://github.com/tarjoilija/zgen.git
+[submodule "vim/dotvim"]
+	path = vim/dotvim
+	url = git@github.com:dotphiles/dotvim.git
