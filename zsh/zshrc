@@ -100,7 +100,6 @@ export PATH=$PATH:$HOME/.local/bin
 source ~/.zsh/prompt.zsh
 source ~/.zsh/aliases.zsh
 #source ~/.zsh/colors.zsh
-source ~/.zsh/base16.zsh
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/screen.zsh
 #source ~/.zsh/plugins/zsh-autosuggestions/autosuggestions.zsh
@@ -110,7 +109,8 @@ fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
 #------------------------------
 # Base16 Shell
 #------------------------------
-BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-monokai.dark.sh"
+BASE16_THEME="monokai"
+BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-$BASE16_THEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 #------------------------------
