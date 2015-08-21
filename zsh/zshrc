@@ -102,7 +102,6 @@ source ~/.zsh/aliases.zsh
 #source ~/.zsh/colors.zsh
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/screen.zsh
-#source ~/.zsh/plugins/zsh-autosuggestions/autosuggestions.zsh
 source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
 fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
 
