@@ -116,7 +116,11 @@ BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-$BASE16_THEME.dar
 #------------------------------
 # zsh-syntax-highlighting
 #------------------------------
+if [[ "$OSTYPE" != "cygwin"* ]]; then
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
+else
+  ZSH_HIGHLIGHT_HIGHLIGHTERS=()
+fi
 
 #------------------------------ 
 # Enable autosuggestions automatically
