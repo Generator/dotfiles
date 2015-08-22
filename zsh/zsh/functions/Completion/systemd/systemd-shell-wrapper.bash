@@ -1,6 +1,6 @@
 
-if [[ -f /etc/systemd/shell-wrapper.conf ]]; then
-	source /etc/systemd/shell-wrapper.conf
+if [[ -f $HOME/.zsh/functions/Completion/systemd/shell-wrapper.conf ]]; then
+	source $HOME/.zsh/functions/Completion/systemd/shell-wrapper.conf
 else
 	HIDEDAEMONS=()
 fi

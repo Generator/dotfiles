@@ -142,13 +142,13 @@ if ! zgen saved; then
     # plugins
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/ssh-agent
     zgen load unixorn/autoupdate-zgen
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load tarruda/zsh-autosuggestions
     zgen load zsh-users/zsh-history-substring-search
     zgen load Tarrasch/zsh-bd
     zgen load caarlos0/zsh-git-sync
+    zgen load chrissicool/zsh-bash
 
     # bulk load
     zgen loadall <<EOPLUGINS
