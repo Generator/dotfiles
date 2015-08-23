@@ -1,9 +1,13 @@
-# zsh
-zsh/zsh/history*
+# Flexget
+flexget/*
+!flexget/config.yml
 
 # weechat
 weechat/weechat.log
 weechat/logs/
+
+# zsh
+zsh/zsh/history*
 
 # misc
 *.back
