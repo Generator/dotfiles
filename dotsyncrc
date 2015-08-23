@@ -22,7 +22,7 @@ bash/bash_aliases
 #bash/bash_profile
 #ack/ackrc
 #aptitude
-bin:.local/bin
+#bin:.local/bin
 #ctags/ctags
 #cmus
 #curl/curlrc
@@ -48,7 +48,7 @@ git/gitconfig
 #ruby/pryrc
 #ruby/gemrc
 #ruby/railsrc
-#ruby/rdebugrc
+##ruby/rdebugrc
 #ruby/aprc
 #ruby/caprc
 screenrc
@@ -64,6 +64,7 @@ tmux
 vim/dotvim:.vim
 vim/vimrc
 vim/gvimrc
+weechat
 #wget/wgetrc
 Xresources
 #zsh/fasdrc
@@ -78,9 +79,9 @@ zsh/zsh
 
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
 [hosts]
-arch				 git=NONE
-thinkpad			 git=ANY
-AJ-DESKTOP                       git=ANY 
+arch                             git=NONE                       files=bin:.local/bin
+thinkpad                         git=ANY
+AJ-DESKTOP                       git=ANY                        files=bin:bin
 #host1.example.com               git=ANY                        files=custom/dotfile    #git repo, pull from anywhere and link a custom dotfile
 #host2.example.com               git=ANY                                                #git repo, pull from anywhere
 #host3.example.com               git=ANY                                                #git repo, pull from anywhere

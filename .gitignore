@@ -2,6 +2,7 @@
 zsh/zsh/history*
 
 # weechat
+weechat/weechat.log
 weechat/logs/
 
 # misc
