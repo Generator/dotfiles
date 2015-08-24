@@ -16,7 +16,7 @@ if has("user_commands")
   set rtp+=~/.vim/bundle/vundle/
   call vundle#rc()
   "let g:vundles=['general', 'git', 'hg', 'programming', 'completion', 'ruby', 'python', 'misc']
-  let g:vundles=['general', 'python', 'programming', 'git']
+  let g:vundles=['general', 'python', 'programming', 'html', 'completion', 'git', 'misc']
   "let g:neocomplcache_enable_at_startup = 1
   " Load 'vundles'
   source ~/.vim/vundles.vim
@@ -26,6 +26,8 @@ if has("user_commands")
   Bundle 'terryma/vim-multiple-cursors'
   Bundle 'gregsexton/gitv'
   Bundle 'osyo-manga/vim-over'
+  Bundle 'edkolev/tmuxline.vim'
+  Bundle 'Shougo/unite.vim'
 endif
 
 " Customize to your needs...

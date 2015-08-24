@@ -2,6 +2,14 @@
 flexget/*
 !flexget/config.yml
 
+# vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
 # weechat
 weechat/weechat.log
 weechat/logs/
@@ -10,6 +18,7 @@ weechat/logs/
 zsh/zsh/history*
 
 # misc
+*~
 *.back
 *_fifo_*
 *.log
