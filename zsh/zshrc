@@ -94,15 +94,13 @@ zstyle ':completion:*:killall:*' force-list always
 #------------------------------
 # Other sources
 #------------------------------
-#module_path=($module_path /usr/lib/zpython) 
-export EDITOR=vim
+#module_path=($module_path /usr/lib/zpython)
 export PATH=$PATH:$HOME/.local/bin
 source ~/.zsh/prompt.zsh
 source ~/.zsh/aliases.zsh
-#source ~/.zsh/colors.zsh
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/screen.zsh
-source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
+#source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
 fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
 
 #------------------------------

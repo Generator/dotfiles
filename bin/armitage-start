@@ -1,2 +1,0 @@
-#!/bin/sh
-PATH=$PATH:$HOME/Desktop/msf3 MSF_DATABASE_CONFIG=~/.msf4/database.yml armitage
