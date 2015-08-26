@@ -17,7 +17,7 @@ alias pacman-autoremove="sudo pacman -Sc && sudo pacman -Qdtq | sudo pacman -Rs 
 # SSH
 alias meatspin="ssh -t aj@5.175.165.218 -p 7272 screen -dR"
 alias lemonparty="ssh -t aj@5.175.169.216 -p 7272 screen -dR"
-alias dd-wrt='ssh root@10.0.0.1'
+alias dd-wrt='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@10.0.0.1'
 alias minicom='minicom -c on'
 alias vboxserial='minicom -D unix\#/tmp/vboxS0'
 
