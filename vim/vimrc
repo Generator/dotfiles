@@ -39,5 +39,5 @@ let g:tmuxline_preset = {
       \'win'  : ['#I #W'],
       \'x'    : ['%b', '%d'],
       \'y'    : '%A',
-      \'z'    : ['#(sh ~/.local/bin/fuzzytime)'],
+      \'z'    : ['#(sh $HOME/.local/bin/fuzzytime)'],
       \'options' : {'status-justify' : 'left'}}
