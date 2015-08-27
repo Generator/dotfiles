@@ -72,7 +72,7 @@ Xresources
 #zsh/zlogin
 #zsh/zlogout
 zsh/zprofile
-zsh/zshenv
+#zsh/zshenv
 zsh/zshrc
 zsh/zsh
 [endfiles]

@@ -28,6 +28,8 @@ if has("user_commands")
   Bundle 'osyo-manga/vim-over'
   Bundle 'edkolev/tmuxline.vim'
   Bundle 'Shougo/unite.vim'
+  " Airline themes
+  Bundle 'rcabralc/monokai-airline.vim'
 endif
 
 " Customize to your needs...
