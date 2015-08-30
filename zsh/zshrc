@@ -1,11 +1,4 @@
 #------------------------------
-# env
-#------------------------------
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
-export EDITOR=vim
-export TERM=xterm-256color
-
-#------------------------------
 # setup options
 #------------------------------
 
@@ -128,6 +121,8 @@ fi
 #------------------------------ 
 # Enable autosuggestions automatically
 #------------------------------ 
+case $TERM in
+		xterm*|rxvt*|screen*)
 zle-line-init() {
 		    zle autosuggest-start
 	}
@@ -141,4 +136,4 @@ zle-line-init() {
 	bindkey '^f' vi-forward-word
 	# or
 	# bindkey '^f' vi-forward-blank-word
-	
+esac
