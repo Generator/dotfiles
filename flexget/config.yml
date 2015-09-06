@@ -1,6 +1,7 @@
 templates:
   tv:
     exists_series: /media/WD1TB/Series/   
+    seen_info_hash: local
     deluge:
       path: /media/WD1TB/Series/  
       label: tv
@@ -74,15 +75,10 @@ tasks:
     template: tv
     priority: 10
 
-  BT-Chat:
-    rss: http://rss.bt-chat.com/?cat=9
-    template: tv
-    priority: 20
-
   ezRSS:
     rss: http://ezrss.it/feed/
     template: tv
-  
+
   _TPB_PublicHD:
     rss:
       url: http://rss.thepiratebay.sx/user/63a33258b2bb5f19729964e818cc5500
@@ -102,7 +98,7 @@ tasks:
     template: tv
     priority: 20
     verify_ssl_certificates: no
-    
+
   _TPB_rartv:
     rss:
       url: http://rss.thepiratebay.sx/user/a73c56ac59c186a918b8c882ace545b4
