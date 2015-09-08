@@ -55,6 +55,7 @@ if ! zgen saved; then
 
     # plugins
     zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/command-not-found
     zgen load unixorn/autoupdate-zgen
     zgen load zsh-users/zsh-syntax-highlighting
