@@ -58,11 +58,10 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/fasd
-    zgen load unixorn/autoupdate-zgen
     zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-completions
-    zgen load tarruda/zsh-autosuggestions
     zgen load zsh-users/zsh-history-substring-search
+    zgen load unixorn/autoupdate-zgen
+    zgen load tarruda/zsh-autosuggestions
     zgen load Tarrasch/zsh-bd
     zgen load caarlos0/zsh-git-sync
     zgen load chrissicool/zsh-bash
