@@ -1,12 +1,6 @@
 emulate sh -c 'source /etc/profile'
 
 #------------------------------
-# env
-#------------------------------
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
-export EDITOR=vim
-
-#------------------------------
 # SSH Agent
 #------------------------------
 SSH_AUTH_SOCK=$(ss -xl | grep -o '/run/user/1000/keyring-.*/ssh')
