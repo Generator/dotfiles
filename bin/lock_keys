@@ -23,4 +23,4 @@ else
  output="$key Lock"
  output2="Off"
 fi
-notify-send -i $icon "$output" "$output2" -t 1000
+notify-send -i $icon "$output" "$output2" -t 3000

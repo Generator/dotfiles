@@ -1,9 +1,12 @@
 Xcursor*theme: Redcurve
 
 ! Xft settings
-!Xft*dpi:              96
-!Xft*antialias:        True
-!Xft*hinting:          true
+Xft*dpi:              96
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 
 ! URxvt Settings
 URxvt*title:             URxvt

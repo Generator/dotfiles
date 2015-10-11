@@ -11,8 +11,9 @@ Session.vim
 *~
 
 # weechat
-weechat/weechat.log
 weechat/logs/
+weechat/urlserver_list.txt
+weechat/weechat.log
 
 # zsh
 zsh/zsh/history*

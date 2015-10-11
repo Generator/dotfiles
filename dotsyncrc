@@ -38,6 +38,7 @@ git/gitconfig
 #irssi
 #mercurial/hgrc
 #mercurial/hgignore
+mpv:.config/mpv
 #mutt
 #mutt/muttrc
 #mutt/offlineimaprc
