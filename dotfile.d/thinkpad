@@ -1,0 +1,6 @@
+[files]
+bin:.local/bin
+conky
+mpv:.config/mpv
+Xresources
+[endfiles]
