@@ -1,0 +1,6 @@
+[files]
+bin:.local/bin
+flexget
+mpv:.config/mpv
+vim/gvimrc
+[endfiles]
