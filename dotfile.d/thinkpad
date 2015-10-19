@@ -5,3 +5,7 @@ mpv:.config/mpv
 vim/gvimrc
 Xresources
 [endfiles]
+
+[hosts]
+thinkpad                         git=ANY
+[endhosts]

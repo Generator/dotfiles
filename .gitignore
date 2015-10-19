@@ -11,14 +11,6 @@ bin/*
 flexget/*
 !flexget/config.yml
 
-# vim
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
-
 # weechat
 weechat/logs/
 weechat/urlserver_list.txt

@@ -7,3 +7,7 @@ vim/gvimrc
 Xresources
 weechat
 [endfiles]
+
+[hosts]
+arch                             git=NONE
+[endhosts]

@@ -16,6 +16,7 @@ DOTFILES=.dotfiles
 # dstfile will be '.$srcfile' by default (with path removed)
 #
 [files]
+dotfile
 dotsyncrc
 bash/bashrc
 bash/bash_aliases
@@ -27,7 +28,7 @@ bash/bash_aliases
 #cmus
 #curl/curlrc
 git/gitconfig
-#git/gitignore
+git/gitignore_global
 #git/gitattributes
 #git/tigrc
 #git/gitk
@@ -80,7 +81,7 @@ zsh/zsh
 
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
 [hosts]
-arch                             git=NONE                       #files=bin:.local/bin,flexget
+arch                             git=NONE
 thinkpad                         git=ANY
 AJ-DESKTOP                       git=ANY                        #files=bin:bin
 #host1.example.com               git=ANY                        files=custom/dotfile    #git repo, pull from anywhere and link a custom dotfile

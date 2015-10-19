@@ -2,3 +2,7 @@
 bin:bin
 weechat
 [endfiles]
+
+[hosts]
+AJ-DESKTOP                       git=ANY
+[endhosts]
