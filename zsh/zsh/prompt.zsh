@@ -10,6 +10,12 @@ case $TERM in
 		;;
 esac
 
+# URxvt I-Beam cursor
+case $TERM in 
+    rxvt-unicode*)
+    echo -e -n "\x1b[\x35 q"
+esac
+
 #------------------------------
 # Prompt
 #------------------------------
