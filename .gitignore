@@ -1,3 +1,12 @@
+#bin
+bin/*
+!bin/256*
+!bin/backup
+!bin/dotsync
+!bin/fuzztime/*
+!bin/fuzzytime
+!bin/lock_keys
+
 # Flexget
 flexget/*
 !flexget/config.yml

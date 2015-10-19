@@ -1,7 +1,0 @@
-#!/bin/sh
-#sleep 9
-conky -c ~/.conky/conkyrc &
-
-#conky -c ~/.conky/conky_nvidia &
-
-conky -c ~/.conky/conky_reddit &
