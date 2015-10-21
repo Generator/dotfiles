@@ -1,7 +1,7 @@
 #------------------------------
 # TERM Settings
 #------------------------------
-[ -n "$TMUX" ] && export TERM=screen-256color
+#[ -n "$TMUX" ] && export TERM=screen-256color
 [ -n "$SCREEN" ] && export TERM=screen-256color
 
 case $TERM in

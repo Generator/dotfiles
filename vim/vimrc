@@ -36,6 +36,11 @@ endif
 
 " Customize to your needs...
 
+" map keys
+" change buffer
+map <S-K> :bnext<CR>
+map <S-J> :bprev<CR>
+
 " Tmuxline
 let g:tmuxline_preset = {
       \'a'    : '#S',

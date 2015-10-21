@@ -1,3 +1,8 @@
+schedules:
+  - tasks: '*'
+    interval:
+      minutes: 30
+
 templates:
   tv:
     exists_series: /media/WD1TB/Series/   
@@ -26,42 +31,29 @@ templates:
 
     series:
       settings:
-        group 1:
-          quality: 720p         
-          from_group:
-            - rartv
-            - PublicHD
-            - eztv
-            - VTV
-      group 1:
+        shows:
+          quality: 720p
+      shows:
         - 'American Horror Story'
         - Arrow
         - 'Brooklyn Nine-Nine'
         - Community
-        - Defiance
         - 'Doctor Who 2005'
         - 'Family Guy'
         - Fargo
         - 'Fear The Walking Dead'
         - 'Game of Thrones'
-        - Grimm
         - Gotham
         - 'Heroes Reborn'
         - 'Marvels Agents of S H I E L D'
         - 'Marvels Agent Carter'
         - 'New Girl'
-        - 'Revolution'
+        - Supergirl
         - 'The Amazing Race'
         - 'The Big Bang Theory'
         - 'The Walking Dead'
-        - 'Under the Dome'
 
 tasks:
-  _DailyTvTorrents:
-    rss: http://www.dailytvtorrents.org/rss/combined/47c96ced29e79d12c18d8c90a44506f7afe90a37995e6f1755eba612d26ae38df1c8937392d96c2c4ac45ab29a14622b236f21ecbac7c6c6b219d8c4b1d7be467ee5f22fb00ac1d3fbc2045cb440bb6a
-    template: tv
-    priority: 10
-
   Showrss:
     rss: 
       url: http://showrss.info/rss.php?user_id=40985&hd=1&proper=0
@@ -75,41 +67,16 @@ tasks:
   Kat:
     rss: http://kat.ph/tv/?rss=1
     template: tv
-    priority: 10
+    priority: 50
 
   ezRSS:
-    rss: http://ezrss.it/feed/
-    template: tv
-
-  _TPB_PublicHD:
-    rss:
-      url: http://rss.thepiratebay.sx/user/63a33258b2bb5f19729964e818cc5500
-      link:
-        - link
-        - magneturi
-    template: tv
-    priority: 20
-    verify_ssl_certificates: no
-
-  _TPB_eztv:
-    rss:
-      url: http://rss.thepiratebay.sx/user/d17c6a45441ce0bc0c057f19057f95e1
-      link:
-        - link
-        - magneturi
-    template: tv
-    priority: 20
-    verify_ssl_certificates: no
-
-  _TPB_rartv:
-    rss:
-      url: http://rss.thepiratebay.sx/user/a73c56ac59c186a918b8c882ace545b4
-      link:
-        - link
-        - magneturi
+    rss: https://eztv.ag/ezrss.xml
     template: tv
     priority: 50
-    verify_ssl_certificates: no
+
+  RARBG:
+    rss: https://rarbg.to/rssdd.php
+    template: tv
 
   _TPB:
     rss:
@@ -120,8 +87,3 @@ tasks:
     template: tv
     priority: 99
     verify_ssl_certificates: no
-
-  _TorrentLeech:
-    rss: http://rss.torrentleech.org/1a4e4df5cab4b13b3f3e
-    template: tv
-

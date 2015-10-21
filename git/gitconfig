@@ -7,3 +7,11 @@
 	default = simple
 [merge]
 	tool = diffuse
+[alias]
+	st = status -sb
+	remotes = remote -v
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[help]
+	autocorrect = 1
+[color]
+	ui = 1

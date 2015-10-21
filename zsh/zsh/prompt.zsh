@@ -64,17 +64,17 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/fasd
+    zgen oh-my-zsh plugins/history-substring-search
     zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-history-substring-search
     zgen load unixorn/autoupdate-zgen
     zgen load tarruda/zsh-autosuggestions
     zgen load Tarrasch/zsh-bd
     zgen load caarlos0/zsh-git-sync
     zgen load chrissicool/zsh-bash
+    zgen load rimraf/k
 
     # bulk load
     zgen loadall <<EOPLUGINS
-        zsh-users/zsh-history-substring-search
 EOPLUGINS
     # ^ can't indent this EOPLUGINS
 
@@ -97,7 +97,7 @@ BULLETTRAIN_TIME_SHOW=false
 # Select prompt
 #------------------------------
 case $TERM in
-		xterm*|rxvt*|screen*)
+		xterm*|rxvt*|screen*|tmux*)
         zgen_start
 				#setprompt
 				;;

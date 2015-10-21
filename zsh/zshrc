@@ -144,7 +144,7 @@ fi
 # Enable autosuggestions automatically
 #------------------------------ 
 case $TERM in
-		xterm*|rxvt*|screen*)
+		xterm*|rxvt*|screen*|tmux*)
 zle-line-init() {
 		    zle autosuggest-start
 	}
