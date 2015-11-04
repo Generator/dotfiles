@@ -1,3 +1,4 @@
+secrets: secrets.yml
 schedules:
   - tasks: '*'
     interval:
@@ -5,13 +6,16 @@ schedules:
 
 templates:
   tv:
-    exists_series: /media/WD1TB/Series/   
+    exists_series: /media/WD1TB/Series/
     seen_info_hash: local
+    exec: notify-send -i deluge "Download {{title}}"
     deluge:
-      path: /media/WD1TB/Series/  
+      path: /media/WD1TB/Series/
       label: tv
-    content_filter: 
-      reject: 
+      ratio: 0.001
+      removeatratio: yes
+    content_filter:
+      reject:
         - '*.rar'
         - '*.wmv'
     regexp:
@@ -33,9 +37,11 @@ templates:
       settings:
         shows:
           quality: 720p
+          propers: 2 hours
       shows:
         - 'American Horror Story'
         - Arrow
+        - 'Ash vs Evil Dead'
         - 'Brooklyn Nine-Nine'
         - Community
         - 'Doctor Who 2005'
@@ -55,8 +61,8 @@ templates:
 
 tasks:
   Showrss:
-    rss: 
-      url: http://showrss.info/rss.php?user_id=40985&hd=1&proper=0
+    rss:
+      url: '{{ secrets.feeds.showrss }}'
       link:
         - link
         - magneturi
@@ -64,26 +70,19 @@ tasks:
     priority: 10
     accept_all: yes
 
-  Kat:
-    rss: http://kat.ph/tv/?rss=1
+  PubFeeds:
+    priority: 20
     template: tv
-    priority: 50
-
-  ezRSS:
-    rss: https://eztv.ag/ezrss.xml
-    template: tv
-    priority: 50
-
-  RARBG:
-    rss: https://rarbg.to/rssdd.php
-    template: tv
-
-  _TPB:
-    rss:
-      url: http://rss.thepiratebay.se/208
-      link:
-        - link
-        - magneturi
-    template: tv
-    priority: 99
-    verify_ssl_certificates: no
+    inputs:
+      #_Kat
+      - rss: '{{ secrets.feeds.kat }}'
+      # Kat_ettv
+      - rss: '{{ secrets.feeds.kat_ettv }}'
+      # Kat_rartv
+      - rss: '{{ secrets.feeds.kat_rartv }}'
+      # ezRSS
+      - rss: '{{ secrets.feeds.ezrss }}'
+      # RARBG
+      - rss: '{{ secrets.feeds.rarbg }}'
+      #_TPB
+      #- rss: '{{ secrets.feeds.tpb }}'
