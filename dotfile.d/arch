@@ -3,7 +3,7 @@ bin:.local/bin
 conky
 flexget
 mpv:.config/mpv
-vim/gvimrc
+#vim/gvimrc
 Xresources
 weechat
 [endfiles]

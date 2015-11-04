@@ -17,7 +17,7 @@ if has("user_commands")
   call vundle#rc()
   "let g:vundles=['general', 'git', 'hg', 'programming', 'completion', 'ruby', 'python', 'misc']
   let g:vundles=['general', 'python', 'programming', 'html', 'completion', 'git', 'misc']
-  "let g:neocomplcache_enable_at_startup = 1
+  let g:neocomplcache_enable_at_startup = 1
   " Load 'vundles'
   source ~/.vim/vundles.vim
   " Add extra bundles here...
@@ -34,12 +34,31 @@ if has("user_commands")
   Bundle 'rcabralc/monokai-airline.vim'
 endif
 
+" Override colorscheme from base16
+" let g:dotvim_colorscheme = 'scheme'
+
 " Customize to your needs...
+
+"NeoVim handles ESC keys as alt+key set this to solve the problem
+if has('nvim')
+   set timeout
+   set timeoutlen=50
+   set ttimeout
+   set ttimeoutlen=50
+endif
 
 " map keys
 " change buffer
-map <S-K> :bnext<CR>
-map <S-J> :bprev<CR>
+if has('nvim')
+   map <M-Right> :bnext<CR>
+   map <M-Left> :bprev<CR>
+else
+   map <S-K> :bnext<CR>
+   map <S-J> :bprev<CR>
+endif
+
+" vim-over command line
+map <C-s> :OverCommandLine<CR>
 
 " Tmuxline
 let g:tmuxline_preset = {

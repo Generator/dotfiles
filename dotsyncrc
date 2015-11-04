@@ -66,6 +66,8 @@ tmux
 vim/dotvim:.vim
 vim/vimrc
 #vim/gvimrc
+vim/dotvim:.config/nvim
+vim/vimrc:.config/nvim/init.vim
 #weechat
 #wget/wgetrc
 #Xresources
