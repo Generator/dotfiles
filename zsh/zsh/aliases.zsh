@@ -2,7 +2,6 @@
 # Aliases
 #------------------------------
 alias ls="ls --color --group-directories-first -h"
-#alias grep='grep --colour=auto'
 alias webshare='python2 -m SimpleHTTPServer 8080'
 #alias qemuctl='qemuctl -enable-kvm'
 if [ -f /usr/bin/nvim ]; then 
@@ -10,7 +9,7 @@ if [ -f /usr/bin/nvim ]; then
   alias vimdiff='nvim -d'
 fi
 alias vi='vim'
-#alias urxvt="urxvt -geometry 94x30"
+alias less='less -R'
 alias zsh-reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 
 # privileged access

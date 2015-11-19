@@ -74,8 +74,8 @@ tasks:
     priority: 20
     template: tv
     inputs:
-      #_Kat
-      - rss: '{{ secrets.feeds.kat }}'
+      #Kat
+      #- rss: '{{ secrets.feeds.kat }}'
       # Kat_ettv
       - rss: '{{ secrets.feeds.kat_ettv }}'
       # Kat_rartv
@@ -83,6 +83,6 @@ tasks:
       # ezRSS
       - rss: '{{ secrets.feeds.ezrss }}'
       # RARBG
-      - rss: '{{ secrets.feeds.rarbg }}'
-      #_TPB
+      #- rss: '{{ secrets.feeds.rarbg }}'
+      #TPB
       #- rss: '{{ secrets.feeds.tpb }}'

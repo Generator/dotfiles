@@ -10,6 +10,9 @@ bin/*
 flexget/*
 !flexget/config.yml
 
+# mpv
+mpv/watch_later
+
 # weechat
 weechat/logs/
 weechat/urlserver_list.txt
