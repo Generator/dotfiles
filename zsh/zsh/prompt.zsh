@@ -92,7 +92,7 @@ fi
 
 # Options bullet-train-oh-my-zsh-theme
 BULLETTRAIN_TIME_SHOW=false
-
+BULLETTRAIN_HG_SHOW=false
 #------------------------------
 # Select prompt
 #------------------------------
