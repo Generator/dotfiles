@@ -64,13 +64,11 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/fasd
-    zgen oh-my-zsh plugins/history-substring-search
     zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
     zgen load unixorn/autoupdate-zgen
     zgen load tarruda/zsh-autosuggestions
     zgen load Tarrasch/zsh-bd
-    zgen load caarlos0/zsh-git-sync
-    zgen load chrissicool/zsh-bash
     zgen load rimraf/k
 
     # bulk load
@@ -93,6 +91,9 @@ fi
 # Options bullet-train-oh-my-zsh-theme
 BULLETTRAIN_TIME_SHOW=false
 BULLETTRAIN_HG_SHOW=false
+
+# Disable oh-my-zsh autoupdate
+DISABLE_AUTO_UPDATE=true
 #------------------------------
 # Select prompt
 #------------------------------

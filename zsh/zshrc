@@ -127,7 +127,7 @@ fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
 #------------------------------
 # Base16 Shell
 #------------------------------
-BASE16_THEME="monokai"
+BASE16_THEME="default"
 BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-$BASE16_THEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
@@ -158,6 +158,7 @@ zle-line-init() {
 	bindkey '^f' vi-forward-word
 	# or
 	# bindkey '^f' vi-forward-blank-word
+  AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
 esac
 
 # pip zsh completion start
