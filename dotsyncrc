@@ -79,6 +79,7 @@ zsh/zprofile
 zsh/zshenv
 zsh/zshrc
 zsh/zsh
+zsh/zplug
 [endfiles]
 
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink

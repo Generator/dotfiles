@@ -1,7 +1,7 @@
 # Reset prompt
-if [[ "$OSTYPE" == "linux"* ]]; then
-prompt off
-fi
+#if [[ "$OSTYPE" == "linux"* ]]; then
+#prompt off
+#fi
 
 # Change xterm to xterm-256color
 case $TERM in
@@ -88,6 +88,41 @@ EOPLUGINS
 fi
 }
 
+#------------------------------
+# zplug
+#------------------------------
+zplug_start(){
+source ~/.zplug/zplug
+
+    # Local pluginszplug "~/.zsh/local", from:local
+    zplug "~/.zsh/local", from:local, nice:-20, of:"*.zsh"
+
+    zplug "plugins/git", from:oh-my-zsh
+    zplug "plugins/extract", from:oh-my-zsh
+    zplug "plugins/command-not-found", from:oh-my-zsh
+    zplug "plugins/fasd", from:oh-my-zsh
+    zplug "Tarrasch/zsh-bd"
+    zplug "rimraf/k"
+    zplug "zsh-users/zsh-syntax-highlighting", nice:10
+    zplug "zsh-users/zsh-history-substring-search", nice:11
+    zplug "tarruda/zsh-autosuggestions", nice:12
+
+    # Theme
+    zplug "caiogondim/bullet-train-oh-my-zsh-theme"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose ; then
+   zplug install --verbose
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
+}
+zplug_start
+#------------------------------
+# Options
+#------------------------------
+
 # Options bullet-train-oh-my-zsh-theme
 BULLETTRAIN_TIME_SHOW=false
 BULLETTRAIN_HG_SHOW=false
@@ -97,12 +132,13 @@ DISABLE_AUTO_UPDATE=true
 #------------------------------
 # Select prompt
 #------------------------------
-case $TERM in
-		xterm*|rxvt*|screen*|tmux*)
-        zgen_start
-				#setprompt
-				;;
-		linux)
-				setprompt
-				;;
-esac
+#case $TERM in
+#		xterm*|rxvt*|screen*|tmux*)
+#        #zgen_start
+#        zplug_start
+#				#setprompt
+#				;;
+#		linux)
+#				setprompt
+#				;;
+#esac
