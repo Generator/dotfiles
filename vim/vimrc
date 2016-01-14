@@ -50,8 +50,8 @@ endif
 " map keys
 " change buffer
 if has('nvim')
-   map <M-Right> :bnext<CR>
-   map <M-Left> :bprev<CR>
+   map <M-Right> :tabnext<CR>
+   map <M-Left> :tabprev<CR>
 else
    map <S-K> :bnext<CR>
    map <S-J> :bprev<CR>
