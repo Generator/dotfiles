@@ -1,4 +1,12 @@
 #------------------------------
+# Other sources
+#------------------------------
+for zshfile in /etc/profile.d/*.zsh; do
+  source $zshfile
+done
+source ~/.zsh/prompt.zsh
+
+#------------------------------
 # setup options
 #------------------------------
 
@@ -23,12 +31,6 @@ setopt PUSHD_SILENT      # Do not print the directory stack after pushd or popd.
 setopt PUSHD_TO_HOME     # Push to home directory when no argument is given.
 setopt unset             # don't error out when unset parameters are used
 
-
-#------------------------------
-# History options
-#------------------------------
-
-
 #------------------------------
 # Command Completion
 #------------------------------
@@ -45,26 +47,11 @@ zstyle :compinstall filename '$HOME/.zshrc'
 zstyle ':completion:*' rehash true # auto rehash commands
 
 # add colors to completions
-# general completion
-#--------------------------------------------------
- #~ zstyle ':completion:*:descriptions' format $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
-#--------------------------------------------------
-#--------------------------------------------------
-# zstyle ':completion:*:corrections' format $'%{\e[0;32m%}%d (errors: %e)%}'
-#--------------------------------------------------
 zstyle ':completion:*:messages' format '%d'
-#~
 zstyle ':completion:*:warnings' format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d'
-#~
-#~ # zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-#~ # zstyle ':completion:*' format 'completing %d'
-#~
 zstyle ':completion:*' format $'%{\e[0;32m%}completing %B%d%b%{\e[0m%}'
-#~
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
-#~
-#~ # autocompletion with arrow-key driven interface
 zstyle ':completion:*' menu select
 
 #------------------------------
@@ -86,11 +73,6 @@ setopt HIST_IGNORE_SPACE       # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS       # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY             # Do not execute immediately upon history expansion.
 setopt HIST_BEEP               # Beep when accessing non-existent history.
-
-# Aliases
-
-# Lists the ten most used commands.
-alias history-stat="history . | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 
 #------------------------------
 # Comp stuff
@@ -114,61 +96,8 @@ zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
 #------------------------------
-# Other sources
-#------------------------------
-#module_path=($module_path /usr/lib/zpython)
-source ~/.zsh/prompt.zsh
-#source ~/.zsh/aliases.zsh
-#source ~/.zsh/keybinds.zsh
-#source ~/.zsh/screen.zsh
-#source ~/.zsh/functions/Completion/systemd/systemd-shell-wrapper.bash
-fpath=(~/.zsh/functions /usr/share/zsh/site-functions/ $fpath)
-
-#------------------------------
-# Base16 Shell
+# Base16 Color Scheme
 #------------------------------
 BASE16_THEME="default"
 BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-$BASE16_THEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
-#------------------------------
-# zsh-syntax-highlighting
-#------------------------------
-if [[ "$OSTYPE" != "cygwin"* ]]; then
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
-else
-  ZSH_HIGHLIGHT_HIGHLIGHTERS=()
-fi
-
-#------------------------------ 
-# Enable autosuggestions automatically
-#------------------------------ 
-case $TERM in
-		xterm*|rxvt*|screen*|tmux*)
-zle-line-init() {
-		    zle autosuggest-start
-	}
-	zle -N zle-line-init
-
-	# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-	# zsh-autosuggestions is designed to be unobtrusive)
-	bindkey '^T' autosuggest-toggle
-	# EOF
-	# Accept suggestions without leaving insert mode
-	bindkey '^f' vi-forward-word
-	# or
-	# bindkey '^f' vi-forward-blank-word
-  AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-esac
-
-# pip zsh completion start
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] ) )
-}
-compctl -K _pip_completion pip
-# pip zsh completion end

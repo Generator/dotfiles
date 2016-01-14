@@ -20,6 +20,8 @@ weechat/weechat.log
 
 # zsh
 zsh/zsh/history*
+zsh/zsh/complete/
+zsh/zsh/disabled/
 
 # misc
 *~
