@@ -17,11 +17,12 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 bindkey ' ' magic-space
 bindkey '^[[Z' reverse-menu-complete
+#bindkey '^I' expand-or-complete # reset fzf-completion
 bindkey -s '^L' "|$PAGER"
 bindkey '^Q' quote-line
 bindkey -s '^N' '> /dev/null 2>&1\n'
 # bind only if fzf installed
-if which fzf >/dev/null; then
+if [[ -x "$(command -v fzf)" ]]; then
    bindkey '^R' fzf-history-widget
 else
    echo "fzf not found"

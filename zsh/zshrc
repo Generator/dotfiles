@@ -1,9 +1,6 @@
 #------------------------------
 # Other sources
 #------------------------------
-for zshfile in /etc/profile.d/*.zsh; do
-  source $zshfile
-done
 source ~/.zsh/prompt.zsh
 
 #------------------------------

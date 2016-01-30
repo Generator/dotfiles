@@ -1,5 +1,5 @@
 typeset -U path
-path=(~/bin ~/.local/bin $path)
+path=(~/bin ~/.bin $path)
 
 if [ -f /usr/bin/nvim ]; then
   export EDITOR=nvim

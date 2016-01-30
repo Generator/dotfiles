@@ -12,6 +12,7 @@ if [ -f /usr/bin/nvim ]; then
   alias vimdiff='nvim -d'
 fi
 alias vi='vim'
+alias vim='vim -p'
 alias zsh-reload="exec zsh && echo 'ZSH config reloaded from ~/.zshrc'"
 
 # privileged access
