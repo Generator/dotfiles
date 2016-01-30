@@ -17,7 +17,7 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 bindkey ' ' magic-space
 bindkey '^[[Z' reverse-menu-complete
-#bindkey '^I' expand-or-complete # reset fzf-completion
+bindkey '^I' expand-or-complete # reset fzf-completion
 bindkey -s '^L' "|$PAGER"
 bindkey '^Q' quote-line
 bindkey -s '^N' '> /dev/null 2>&1\n'

@@ -31,8 +31,22 @@ setopt unset             # don't error out when unset parameters are used
 #------------------------------
 # Command Completion
 #------------------------------
-autoload -Uz compinit
+#autoload -Uz compinit
+#compinit
+
+zmodload -ap zsh/parameter parameters
+zmodload zsh/complist
+autoload -Uz compinit promptinit bashcompinit
 compinit
+promptinit
+bashcompinit
+zstyle :compinstall filename '${HOME}/.zshrc'
+zstyle ':completion:*:pacman:*' force-list always
+zstyle ':completion:*:*:pacman:*' menu yes select
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:*:killall:*' menu yes select
+zstyle ':completion:*:killall:*' force-list always
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _approximate
@@ -70,27 +84,6 @@ setopt HIST_IGNORE_SPACE       # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS       # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY             # Do not execute immediately upon history expansion.
 setopt HIST_BEEP               # Beep when accessing non-existent history.
-
-#------------------------------
-# Comp stuff
-#------------------------------
-
-zmodload -ap zsh/parameter parameters
-zmodload zsh/complist
-autoload -Uz compinit
-autoload -Uz bashcompinit
-compinit
-bashcompinit
-zstyle :compinstall filename '${HOME}/.zshrc'
-#~ #~
-zstyle ':completion:*:pacman:*' force-list always
-zstyle ':completion:*:*:pacman:*' menu yes select
-#~ #~
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
-#~ #~
-zstyle ':completion:*:*:killall:*' menu yes select
-zstyle ':completion:*:killall:*' force-list always
 
 #------------------------------
 # Base16 Color Scheme

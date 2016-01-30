@@ -36,16 +36,17 @@ source ~/.zplug/zplug
     setopt extended_glob
 
     # Local plugins
-    #zplug "/etc/profile.d/", from:local, nice:-6, of:"*.zsh"
+    zplug "/etc/profile.d/", from:local, nice:-6, of:"*.zsh"
     zplug "~/.zsh/local", from:local, nice:-5, of:"*.zsh"
     zplug "~/.zsh/local/after", from:local, nice:19, of:"*.zsh"
 
-    # oh-my-zsh plugins
+    ## oh-my-zsh plugins
     zplug "plugins/command-not-found", from:oh-my-zsh
     zplug "plugins/extract", from:oh-my-zsh
     zplug "plugins/git", from:oh-my-zsh
 
-    # github plugins
+    ## github plugins
+    zplug "b4b4r07/zplug" # DO NOT REMOVE!
     zplug "b4b4r07/enhancd", of:enhancd.sh
     zplug "atweiden/fzf-extras", of:fzf-extras.sh, if:"[[ -x '$(command -v fzf)' ]]"
     zplug "clvv/fasd", as:command, do:"make install"
@@ -54,7 +55,7 @@ source ~/.zplug/zplug
     zplug "RobSis/zsh-completion-generator"
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting", nice:10
-    zplug "tarruda/zsh-autosuggestions", nice:11
+    #zplug "tarruda/zsh-autosuggestions", nice:11
 
     # Theme
     zplug "caiogondim/bullet-train-oh-my-zsh-theme", if:"[[ $TERM != linux ]]"
@@ -75,17 +76,17 @@ zplug load
 # Options After
 #------------------------------
 
-# Enable autosuggestions automatically
-zle-line-init() {
-	 zle autosuggest-start
-	}
-zle -N zle-line-init
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle
-# Accept suggestions without leaving insert mode
+## Enable autosuggestions automatically
+#zle-line-init() {
+#	 zle autosuggest-start
+#	}
+#zle -N zle-line-init
+#
+## use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+## zsh-autosuggestions is designed to be unobtrusive)
+#bindkey '^T' autosuggest-toggle
+## Accept suggestions without leaving insert mode
 #bindkey '^f' vi-forward-word
-# or
-bindkey '^f' vi-forward-blank-word
-AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+## or
+##bindkey '^f' vi-forward-blank-word
+#AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
