@@ -54,8 +54,8 @@ source ~/.zplug/zplug
     zplug "rimraf/k"
     zplug "RobSis/zsh-completion-generator"
     zplug "zsh-users/zsh-completions"
-    zplug "zsh-users/zsh-syntax-highlighting", nice:10
-    #zplug "tarruda/zsh-autosuggestions", nice:11
+    zplug "tarruda/zsh-autosuggestions", nice:10, at:v0.1.x
+    zplug "zsh-users/zsh-syntax-highlighting", nice:11
 
     # Theme
     zplug "caiogondim/bullet-train-oh-my-zsh-theme", if:"[[ $TERM != linux ]]"
@@ -90,3 +90,4 @@ zplug load
 ## or
 ##bindkey '^f' vi-forward-blank-word
 #AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+autosuggest_start
