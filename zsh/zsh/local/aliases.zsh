@@ -3,6 +3,7 @@
 #------------------------------
 alias ...="fdr"
 alias ls="ls --color --group-directories-first -h"
+alias dd="dd status=progress"
 # Lists the ten most used commands.
 alias history-stat="history . | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias webshare='python2 -m SimpleHTTPServer 8080'

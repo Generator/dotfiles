@@ -54,7 +54,7 @@ source ~/.zplug/zplug
     zplug "rimraf/k"
     zplug "RobSis/zsh-completion-generator"
     zplug "zsh-users/zsh-completions"
-    zplug "tarruda/zsh-autosuggestions", nice:10, at:v0.1.x
+    #zplug "tarruda/zsh-autosuggestions", nice:10, at:v0.2.x
     zplug "zsh-users/zsh-syntax-highlighting", nice:11
 
     # Theme
@@ -71,23 +71,3 @@ zplug load
 
     # Restore extended_glob option.
     options[extended_glob]=$eg
-
-#------------------------------
-# Options After
-#------------------------------
-
-## Enable autosuggestions automatically
-#zle-line-init() {
-#	 zle autosuggest-start
-#	}
-#zle -N zle-line-init
-#
-## use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-## zsh-autosuggestions is designed to be unobtrusive)
-#bindkey '^T' autosuggest-toggle
-## Accept suggestions without leaving insert mode
-#bindkey '^f' vi-forward-word
-## or
-##bindkey '^f' vi-forward-blank-word
-#AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-autosuggest_start
