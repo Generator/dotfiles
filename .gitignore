@@ -6,6 +6,9 @@ bin/*
 !bin/fuzzytime
 !bin/lock_keys
 
+# Conky
+conky/redditmail
+
 # Flexget
 flexget/*
 !flexget/config.yml
