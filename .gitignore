@@ -1,6 +1,5 @@
 #bin
 bin/*
-!bin/backup
 !bin/dotsync
 !bin/fuzztime/*
 !bin/fuzzytime
