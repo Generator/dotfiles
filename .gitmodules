@@ -10,3 +10,9 @@
 [submodule "vim/dotvim"]
 	path = vim/dotvim
 	url = https://github.com/dotphiles/dotvim.git
+[submodule "zsh/zplug"]
+	path = zsh/zplug
+	url = https://github.com/b4b4r07/zplug.git
+[submodule "shell/colors/gotham-contrib"]
+	path = shell/colors/gotham-contrib
+	url = https://github.com/whatyouhide/gotham-contrib.git
