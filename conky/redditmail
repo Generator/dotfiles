@@ -1,2 +1,0 @@
-#!/bin/bash
-lynx -source --dump "http://www.reddit.com/message/unread/.rss?feed=657002594d976611f2da8d9c9b05fecf6a57c76b&user=American_Jesus" |grep -o "<item>"|wc -l
