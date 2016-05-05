@@ -1,7 +1,8 @@
 #------------------------------
 # Other sources
 #------------------------------
-source ~/.zsh/prompt.zsh
+source ~/.zsh/zplugrc
+#source ~/.zsh/zplugrc-v2
 
 #------------------------------
 # setup options
