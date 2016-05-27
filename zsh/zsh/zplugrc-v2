@@ -29,6 +29,7 @@ zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_aur
 #------------------------------
 # zplug
 #------------------------------
+export ZPLUG_CLONE_DEPTH=1
 export ZPLUG_HOME=~/.zplugv2
 source $ZPLUG_HOME/init.zsh
 
@@ -37,9 +38,9 @@ source $ZPLUG_HOME/init.zsh
     setopt extended_glob
 
     # Local plugins
-    zplug "/etc/profile.d/", from:local, nice:-6, use:"*.zsh"
-    zplug "~/.zsh/local", from:local, nice:-5, use:"*.zsh"
-    zplug "~/.zsh/local/after", from:local, nice:19, use:"*.zsh"
+    #zplug "/etc/profile.d/", from:local, nice:-6, use:"*.zsh"
+    #zplug "~/.zsh/local", from:local, nice:-5, use:"*.zsh"
+    #zplug "~/.zsh/local/after", from:local, nice:19, use:"*.zsh"
 
     ## oh-my-zsh plugins
     zplug "plugins/command-not-found", from:oh-my-zsh
@@ -59,7 +60,7 @@ source $ZPLUG_HOME/init.zsh
     zplug "zsh-users/zsh-syntax-highlighting", nice:11
 
     # Theme
-    zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"bullet-train.zsh-theme" if:"[[ $TERM != linux ]]"
+    zplug "caiogondim/bullet-train-oh-my-zsh-theme", if:"[[ $TERM != linux ]]"
     zplug "~/.zsh/local/theme", from:local, nice:-19, use:"simple-prompt.zsh-theme", if:"[[ $TERM == linux ]]"
 
 # Install plugins if there are plugins that have not been installed
