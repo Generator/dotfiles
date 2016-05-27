@@ -23,6 +23,7 @@ bash/bash_aliases
 #bash/bash_profile
 #ack/ackrc
 #aptitude
+aria2
 #bin:.local/bin
 #ctags/ctags
 #cmus
