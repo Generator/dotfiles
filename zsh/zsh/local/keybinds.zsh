@@ -5,6 +5,7 @@ bindkey "^J" self-insert
 bindkey "\e[3~" delete-char
 bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' backward-word
+bindkey '^[^?' backward-kill-word
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
 bindkey '\e[H' beginning-of-line
@@ -22,9 +23,9 @@ bindkey -s '^L' "|$PAGER"
 bindkey '^Q' quote-line
 bindkey -s '^N' '> /dev/null 2>&1\n'
 # bind only if fzf installed
-if [[ -x "$(command -v fzf)" ]]; then
-   bindkey '^R' fzf-history-widget
-else
-   echo "fzf not found"
-   bindkey '^R' history-incremental-search-backward
-fi
+#if [[ -x "$(command -v fzf)" ]]; then
+#   bindkey '^R' fzf-history-widget
+#else
+#   echo "fzf not found"
+#   bindkey '^R' history-incremental-search-backward
+#fi

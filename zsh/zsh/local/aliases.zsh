@@ -4,6 +4,13 @@
 alias ...="fdr"
 alias ls="ls --color --group-directories-first -h"
 alias dd="dd status=progress"
+
+# Use rsync for cp/mv
+#if [[ -x "$(command -v rsync)" ]]; then
+#alias cp="rsync -aP"
+#alias mv="rsync -aP --remove-source-files"
+#fi
+
 # Lists the ten most used commands.
 alias history-stat="history . | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias webshare='python2 -m SimpleHTTPServer 8080'
@@ -22,7 +29,9 @@ alias update-mkinitcpio="sudo mkinitcpio -p linux"
 alias pacman-autoremove="sudo pacman -Sc && sudo pacman -Qdtq | sudo pacman -Rs -"
 
 # SSH
-alias dd-wrt='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@10.0.0.1'
+alias wrt160n='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@wrt160n.lan'
+alias wnr3500l="ssh root@wnr3500l.lan -t tmux a"
+alias thinkpad='ssh aj@thinkpad.lan'
 alias minicom='minicom -c on'
 alias vboxserial='minicom -D unix\#/tmp/vboxS0'
 

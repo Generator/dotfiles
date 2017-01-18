@@ -3,8 +3,16 @@
 #------------------------------
 
 # Options bullet-train-oh-my-zsh-theme
-BULLETTRAIN_TIME_SHOW=false
-BULLETTRAIN_HG_SHOW=false
+BULLETTRAIN_PROMPT_ORDER=(
+  status
+  custom
+  dir
+  perl
+  ruby
+  virtualenv
+  go
+  git
+)
 
 # Disable oh-my-zsh autoupdate
 DISABLE_AUTO_UPDATE=true
@@ -44,6 +52,7 @@ source ~/.zplug/zplug
     zplug "plugins/command-not-found", from:oh-my-zsh
     zplug "plugins/extract", from:oh-my-zsh
     zplug "plugins/git", from:oh-my-zsh
+    zplug "plugins/screen", from:oh-my-zsh
 
     ## github plugins
     zplug "b4b4r07/zplug", at:v1 # DO NOT REMOVE!
@@ -58,6 +67,7 @@ source ~/.zplug/zplug
     zplug "zsh-users/zsh-syntax-highlighting", nice:11
 
     # Theme
+    setopt prompt_subst # Make sure propt is able to be generated properly.
     zplug "caiogondim/bullet-train-oh-my-zsh-theme", if:"[[ $TERM != linux ]]"
     zplug "~/.zsh/local/theme", from:local, nice:-19, of:"simple-prompt.zsh-theme", if:"[[ $TERM == linux ]]"
 

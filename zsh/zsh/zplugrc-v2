@@ -22,14 +22,15 @@ GENCOMPL_PY=python2
 GENCOMPL_FPATH=$HOME/.zsh/complete
 
 # enable agent forwarding
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent quiet yes
-zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_aur
+#zstyle :omz:plugins:ssh-agent agent-forwarding on
+#zstyle :omz:plugins:ssh-agent quiet yes
+#zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_aur
 
 #------------------------------
 # zplug
 #------------------------------
-export ZPLUG_CLONE_DEPTH=1
+unset ZPLUG_SHALLOW
+zstyle :zplug:tag depth 1
 export ZPLUG_HOME=~/.zplugv2
 source $ZPLUG_HOME/init.zsh
 
@@ -38,37 +39,44 @@ source $ZPLUG_HOME/init.zsh
     setopt extended_glob
 
     # Local plugins
-    #zplug "/etc/profile.d/", from:local, nice:-6, use:"*.zsh"
-    #zplug "~/.zsh/local", from:local, nice:-5, use:"*.zsh"
-    #zplug "~/.zsh/local/after", from:local, nice:19, use:"*.zsh"
+    #zplug "/etc/profile.d/", from:local, use:"*.zsh"
+    zplug "~/.zsh/local", from:local, use:"*.zsh"
+    #zplug "~/.zsh/local/after", from:local, defer:1, use:"*.zsh"
 
     ## oh-my-zsh plugins
     zplug "plugins/command-not-found", from:oh-my-zsh
     zplug "plugins/extract", from:oh-my-zsh
-    #zplug "plugins/git", from:oh-my-zsh
+    zplug "plugins/git", from:oh-my-zsh
+    zplug "plugins/screen", from:oh-my-zsh
 
     ## github plugins
-    zplug "b4b4r07/zplug", at:v1 # DO NOT REMOVE!
+    #zplug "zplug/zplug" # DO NOT REMOVE!
     zplug "b4b4r07/enhancd", use:enhancd.sh
-    #zplug "atweiden/fzf-extras", use:fzf-extras.sh, if:"[[ -x '$(command -v fzf)' ]]"
+    zplug "atweiden/fzf-extras", use:fzf-extras.sh, if:"[[ -x '$(command -v fzf)' ]]"
     #zplug "clvv/fasd", as:command, hook-build:"make install"
     zplug "marzocchi/zsh-notify", if:"[[ $OSTYPE == *linux* ]]"
     zplug "rimraf/k"
     zplug "RobSis/zsh-completion-generator"
     zplug "zsh-users/zsh-completions"
-    #zplug "tarruda/zsh-autosuggestions", nice:10, at:v0.2.x
-    zplug "zsh-users/zsh-syntax-highlighting", nice:11
+    zplug "tarruda/zsh-autosuggestions", defer:1
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
     # Theme
-    zplug "caiogondim/bullet-train-oh-my-zsh-theme", if:"[[ $TERM != linux ]]"
-    zplug "~/.zsh/local/theme", from:local, nice:-19, use:"simple-prompt.zsh-theme", if:"[[ $TERM == linux ]]"
+    setopt prompt_subst
+    zplug "caiogondim/bullet-train-oh-my-zsh-theme", as:theme, if:"[[ $TERM != linux ]]"
+    zplug "~/.zsh/local/theme", from:local, defer:0, use:"simple-prompt.zsh-theme", if:"[[ $TERM == linux ]]"
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose ; then
-   zplug install --verbose
+if ! zplug check ; then
+   zplug install
 fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
     # Restore extended_glob option.
     options[extended_glob]=$eg
+
+# keybind zsh-autosuggestions
+bindkey '^F' autosuggest-accept
+
+bindkey -M main > /dev/null 2>&1
