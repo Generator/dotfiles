@@ -1,6 +1,7 @@
 [files]
 bin:.local/bin
 conky
+compton.conf:.config/compton.conf
 flexget
 mpv:.config/mpv
 #vim/gvimrc
