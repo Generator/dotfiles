@@ -36,7 +36,7 @@ if has("user_commands")
 endif
 
 " Override colorscheme from base16
-" let g:dotvim_colorscheme = 'scheme'
+let g:dotvim_colorscheme = 'base16-default-dark'
 
 " Customize to your needs...
 
