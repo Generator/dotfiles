@@ -94,7 +94,7 @@ color4 383C4A
 # Gap between borders of screen and text
 # same thing as passing -x at command line
 gap_x 20
-gap_y 385
+gap_y 370
 
 TEXT
 ${color1}IP:${color2}${alignr}${execi 400 curl icanhazip.com}

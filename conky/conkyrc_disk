@@ -105,8 +105,6 @@ ${color1}Home: ${color2}${alignr}${fs_free /home}
 ${voffset -3}${color1}${fs_bar /home}${offset -85}${color3}${execbar echo 0}${color}
 ${color1}Hitachi: ${color2}${alignr}${fs_free /media/Hitachi}
 ${voffset -3}${color1}${fs_bar /media/Hitachi}${offset -85}${color3}${execbar echo 0}${color}
-${color1}Windows: ${color2}${alignr}${fs_free /media/sdb2}
-${voffset -3}${color1}${fs_bar /media/sdb2}${offset -85}${color3}${execbar echo 0}${color}
 ${color1}WD1TB: ${color2}${alignr}${fs_free /media/WD1TB}
 ${voffset -3}${color1}${fs_bar /media/WD1TB}${offset -85}${color3}${execbar echo 0}${color}
 ${color1}Trash: ${color2}${alignr}${exec du -hs .local/share/Trash | cut -f 1}
