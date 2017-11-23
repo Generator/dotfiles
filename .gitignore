@@ -35,3 +35,4 @@ zsh/zsh/disabled/
 *_fifo_*
 *.log
 *.stackdump
+.stfolder
