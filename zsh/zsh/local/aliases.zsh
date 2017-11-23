@@ -4,6 +4,8 @@
 alias ...="fdr"
 alias ls="ls --color --group-directories-first -h"
 alias dd="dd status=progress"
+alias grive="grive --ignore '^CCGANG/STUFF/*'"
+alias bandcamp-dl='bandcamp-dl -r --template="%{artist}/%{album}/%{track}-%{artist} - %{title}"'
 
 # Use rsync for cp/mv
 #if [[ -x "$(command -v rsync)" ]]; then
@@ -26,9 +28,10 @@ alias zsh-reload="exec zsh && echo 'ZSH config reloaded from ~/.zshrc'"
 # privileged access
 alias sudo='sudo -E'
 alias update-mkinitcpio="sudo mkinitcpio -p linux"
-alias pacman-autoremove="sudo pacman -Sc && sudo pacman -Qdtq | sudo pacman -Rs -"
+alias pacman-autoremove="sudo bash -c 'yes | pacman -Sc && pacman -Qdtq | pacman -Rs - && yes | pacman-optimize'"
 
 # SSH
+alias ssh='[ -n "$TMUX" ] && eval $(tmux show-env -s |grep "^SSH_"); /usr/bin/ssh'
 alias wrt160n='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@wrt160n.lan'
 alias wnr3500l="ssh root@wnr3500l.lan -t tmux a"
 alias thinkpad='ssh aj@thinkpad.lan'
