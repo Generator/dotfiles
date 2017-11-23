@@ -54,8 +54,8 @@ default_color 303030
 own_window_colour 292C36
 
 # Text alignment, other possible values are commented
-#alignment top_left
-alignment top_right
+alignment top_left
+#alignment top_right
 #alignment bottom_left
 #alignment bottom_right
 
@@ -94,7 +94,10 @@ color4 383C4A
 # Gap between borders of screen and text
 # same thing as passing -x at command line
 gap_x 20
-gap_y 120
+gap_y 122
+
+# Specify a Xinerama head
+xinerama_head 1
 
 TEXT
 ${color1}Kernel:${color2}${alignr}$kernel

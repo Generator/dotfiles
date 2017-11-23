@@ -54,8 +54,8 @@ default_color 303030
 own_window_colour 292C36
 
 # Text alignment, other possible values are commented
-#alignment top_left
-alignment top_right
+alignment top_left
+#alignment top_right
 #alignment bottom_left
 #alignment bottom_right
 
@@ -95,6 +95,9 @@ color4 383C4A
 # same thing as passing -x at command line
 gap_x 20
 gap_y 5
+
+# Specify a Xinerama head
+xinerama_head 1
 
 TEXT
 ${color2}${alignc -3}${font DotMatrix:size=16}${time %H:%M}

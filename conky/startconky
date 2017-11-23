@@ -1,5 +1,5 @@
 #!/bin/sh
-sleep 12
+sleep 30
 conky -c .conky/conkyrc_clock &
 conky -c .conky/conkyrc_sys &
 conky -c .conky/conkyrc_disk &
