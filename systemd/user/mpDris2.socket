@@ -1,0 +1,6 @@
+[Unit]
+Description=MPRIS2 support for MPD
+
+[Socket]
+ListenStream=6600
+Service=mpDris2.service

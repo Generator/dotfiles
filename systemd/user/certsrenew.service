@@ -1,0 +1,10 @@
+[Unit]
+Description=Renew SSL certs
+After=network-online.target
+
+[Service]
+Environment=SSH_AUTH_SOCK=%h/.ssh/ssh_auth_sock
+ExecStart=/home/aj/.bin/certs_renew
+
+[Install]
+WantedBy=default.target

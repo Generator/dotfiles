@@ -1,0 +1,10 @@
+[Unit]
+Description=VNC Server
+
+[Socket]
+ListenStream=5900
+Accept=yes
+Service=x0vncserver.service
+
+[Install]
+WantedBy=sockets.target

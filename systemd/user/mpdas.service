@@ -1,0 +1,10 @@
+[Unit]
+Description=AudoScrobbler client for MPD
+Requires=mpd.service
+After=mpd.service network.target
+
+[Service]
+ExecStart=/usr/bin/mpdas --no-daemon
+
+[Install]
+WantedBy=default.target

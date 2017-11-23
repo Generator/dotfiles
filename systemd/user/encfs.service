@@ -1,0 +1,12 @@
+[Unit]
+Description=Mount EncFS folders
+Before=tmux.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/encfs --extpass='cat %h/.encfs/pwd' %h/GDrive/.encrypted %h/Private
+KillMode=/usr/sbin/fusermount -u %h/Private
+
+[Install]
+WantedBy=default.target

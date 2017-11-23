@@ -1,0 +1,13 @@
+[Unit]
+Description=RARBG RSS generator 
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/aj/.bin/rarbg
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

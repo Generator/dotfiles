@@ -1,0 +1,9 @@
+[Unit]
+Description=Anydesk socket
+
+[Socket]
+ListenStream=0.0.0.0:7070
+Service=anydesk.service
+
+[Install]
+WantedBy=sockets.target

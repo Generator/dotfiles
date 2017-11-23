@@ -1,0 +1,9 @@
+[Unit]
+Description=Anydesk
+After=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/anydesk --control
+
+[Install]
+WantedBy=default.target

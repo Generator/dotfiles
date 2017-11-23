@@ -1,0 +1,11 @@
+[Unit]
+Description=Rclone sync
+After=local-fs.target network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=%h/.bin/rclone_sync
+
+[Install]
+WantedBy=default.target

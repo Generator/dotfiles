@@ -1,0 +1,7 @@
+[Unit]
+Description=XVNC Per-Connection Daemon
+
+[Service]
+ExecStart=-/usr/bin/Xvnc -rfbauth /etc/vncpasswd
+StandardInput=socket
+StandardError=syslog

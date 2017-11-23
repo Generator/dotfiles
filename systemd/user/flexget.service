@@ -1,0 +1,9 @@
+[Unit]
+Description=FlexGet Daemon
+After=network.target
+
+[Service]
+ExecStart=/home/aj/.bin/flexget execute
+
+[Install]
+WantedBy=default.target

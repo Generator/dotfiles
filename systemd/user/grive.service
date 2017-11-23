@@ -1,0 +1,13 @@
+[Unit]
+Description=Grive sync
+After=local-fs.target network.target
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/home/aj/.bin/grive_sync
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

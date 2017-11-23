@@ -1,0 +1,12 @@
+[Unit]
+Description=i3lock
+Before=sleep.target
+
+[Service]
+User=%u
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/sbin/i3lock-wrapper -d
+
+[Install]
+WantedBy=sleep.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Xbox controller driver daemon
+Documentation=man:xboxdrv(1)
+
+[Service]
+ExecStart=/usr/bin/xboxdrv --detach -c %h/.config/xboxdrv/DragonRise.xboxdrv --detach-kernel-driver
+
+[Install]
+WantedBy=multi-user.target
