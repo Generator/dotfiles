@@ -15,6 +15,10 @@ flexget/*
 # mpv
 mpv/watch_later
 
+# systemd
+*.target.wants
+*.target.wants/*
+
 # weechat
 weechat/logs/
 weechat/urlserver_list.txt
