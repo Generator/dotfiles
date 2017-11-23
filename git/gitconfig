@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [merge]
-	tool = diffuse
+	tool = meld
 [alias]
 	st = status -sb
 	remotes = remote -v
