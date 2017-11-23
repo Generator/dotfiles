@@ -7,9 +7,6 @@
 [submodule "zsh/zsh/framework/zgen"]
 	path = zsh/zsh/framework/zgen
 	url = https://github.com/tarjoilija/zgen.git
-[submodule "vim/dotvim"]
-	path = vim/dotvim
-	url = https://github.com/dotphiles/dotvim.git
 [submodule "shell/colors/gotham-contrib"]
 	path = shell/colors/gotham-contrib
 	url = https://github.com/whatyouhide/gotham-contrib.git
