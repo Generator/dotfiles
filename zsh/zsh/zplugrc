@@ -39,6 +39,8 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent quiet yes
 zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_aur
 
+zstyle :zplug:tag depth 1
+
 #------------------------------
 # zplug
 #------------------------------
@@ -86,3 +88,6 @@ zplug load
 
     # Restore extended_glob option.
     options[extended_glob]=$eg
+    
+# keybind zsh-autosuggestions
+bindkey '^F' autosuggest-accept    
