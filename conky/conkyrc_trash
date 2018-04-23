@@ -54,8 +54,8 @@ default_color 303030
 own_window_colour 292C36
 
 # Text alignment, other possible values are commented
-#alignment top_left
-alignment top_right
+alignment top_left
+#alignment top_right
 #alignment bottom_left
 #alignment bottom_right
 
