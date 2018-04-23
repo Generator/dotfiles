@@ -36,3 +36,4 @@ zsh/zsh/disabled/
 *.log
 *.stackdump
 .stfolder
+*.lock
