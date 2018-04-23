@@ -1,5 +1,7 @@
 typeset -U path
-path=(~/bin ~/.bin ~/.gem/ruby/*/bin $path)
+[ -d ~/.gem/ruby/*/bin ] && path=(~/.gem/ruby/*/bin $path)
+[ -d ~/bin ] && path=(~/bin $path)
+[ -d ~/.bin ] && path=(~/.bin $path)
 
 if [ -f /usr/bin/nvim ]; then
   export EDITOR=nvim
