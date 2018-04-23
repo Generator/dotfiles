@@ -39,48 +39,60 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent quiet yes
 zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_aur
 
+<<<<<<< HEAD
 zstyle :zplug:tag depth 1
+=======
+# Load all local .zsh (issue with zplugv2)
+#for f (/etc/profile.d/*.zsh) { source $f }
+for f (~/.zsh/local/*.zsh) { source $f }
+>>>>>>> zplug2
 
 #------------------------------
 # zplug
 #------------------------------
-source ~/.zplug/zplug
+unset ZPLUG_SHALLOW
+zstyle :zplug:tag depth 1
+export ZPLUG_HOME=~/.zplugv2
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+  source $ZPLUG_HOME/init.zsh && zplug update --self
+fi
+source $ZPLUG_HOME/init.zsh
 
     # Save extended_glob option for restore. We need to change it for zplug's of tags.
     local eg=$options[extended_glob]
     setopt extended_glob
 
     # Local plugins
-    zplug "/etc/profile.d/", from:local, nice:-6, of:"*.zsh"
-    zplug "~/.zsh/local", from:local, nice:-5, of:"*.zsh"
-    zplug "~/.zsh/local/after", from:local, nice:19, of:"*.zsh"
+    #zplug "/etc/profile.d/", use:"*.zsh", from:local, defer:3
+    #zplug "~/.zsh/local", use:"*.zsh", from:local, defer:3
+    #zplug "~/.zsh/local/after", use:"*.zsh", from:local, defer:3
 
     ## oh-my-zsh plugins
     zplug "plugins/command-not-found", from:oh-my-zsh
     zplug "plugins/extract", from:oh-my-zsh
     zplug "plugins/git", from:oh-my-zsh
-    zplug "plugins/screen", from:oh-my-zsh
 
     ## github plugins
-    zplug "b4b4r07/zplug", at:v1 # DO NOT REMOVE!
-    zplug "b4b4r07/enhancd", of:init.sh
-    zplug "atweiden/fzf-extras", of:fzf-extras.sh, if:"[[ -x '$(command -v fzf)' ]]"
-    zplug "clvv/fasd", as:command, do:"make install"
+    #zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+    zplug "b4b4r07/enhancd", use:init.sh
+    zplug "clvv/fasd", as:command, hook-build:"make DESTDIR=$HOME/.bin install"
     zplug "marzocchi/zsh-notify", if:"[[ $OSTYPE == *linux* ]]"
     zplug "rimraf/k"
-    zplug "RobSis/zsh-completion-generator"
+    zplug "atweiden/fzf-extras", use:fzf-extras.sh, if:"[[ -x '$(command -v fzf)' ]]"
     zplug "zsh-users/zsh-completions"
-    zplug "tarruda/zsh-autosuggestions", nice:10
-    zplug "zsh-users/zsh-syntax-highlighting", nice:11
+    zplug "zsh-users/zsh-autosuggestions", defer:2
+    zplug "zdharma/fast-syntax-highlighting", defer:3
 
     # Theme
     setopt prompt_subst # Make sure propt is able to be generated properly.
-    zplug "caiogondim/bullet-train-oh-my-zsh-theme", if:"[[ $TERM != linux ]]"
-    zplug "~/.zsh/local/theme", from:local, nice:-19, of:"simple-prompt.zsh-theme", if:"[[ $TERM == linux ]]"
+    zplug "caiogondim/bullet-train-oh-my-zsh-theme", as:theme, if:"[[ $TERM != linux ]]"
+    zplug "~/.zsh/local/theme", from:local, use:"simple-prompt.zsh-theme", if:"[[ $TERM == linux ]]"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose ; then
-   zplug install --verbose
+   LC_ALL=en_US.UTF-8 zplug install
 fi
 
 # Then, source plugins and add commands to $PATH
@@ -91,3 +103,9 @@ zplug load
     
 # keybind zsh-autosuggestions
 bindkey '^F' autosuggest-accept    
+<<<<<<< HEAD
+=======
+
+# Load all local [after] .zsh (issue with zplugv2)
+for f (~/.zsh/local/after/*.zsh) { source $f }
+>>>>>>> zplug2

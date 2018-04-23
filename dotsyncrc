@@ -87,6 +87,7 @@ zsh/zplug
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
 [hosts]
 arch                             git=NONE
+A300                             git=ANY
 thinkpad                         git=ANY
 AJ-DESKTOP                       git=ANY                        #files=bin:bin
 #host1.example.com               git=ANY                        files=custom/dotfile    #git repo, pull from anywhere and link a custom dotfile

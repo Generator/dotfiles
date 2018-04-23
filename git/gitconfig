@@ -16,4 +16,4 @@
 [color]
 	ui = 1
 [core]
-	editor = nvim
+	editor = vim

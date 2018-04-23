@@ -5,21 +5,6 @@ Documentation=man:tmux(1)
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-Environment="TERM=xterm-256color"
-Environment="XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0"
-Environment="XDG_CONFIG_DIRS=/etc/xdg"
-Environment="XDG_VTNR=1"
-Environment="XDG_SESSION_CLASS=user"
-Environment="XDG_SESSION_ID=c2"
-Environment="XDG_SESSION_DESKTOP=XFCE"
-Environment="XDG_DATA_DIRS=/home/aj/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/usr/share"
-Environment="XDG_MENU_PREFIX=xfce-"
-Environment="XDG_SESSION_TYPE=x11"
-Environment="XDG_CURRENT_DESKTOP=XFCE"
-Environment="XDG_SEAT=seat0"
-Environment="XDG_RUNTIME_DIR=/run/user/1000"
-Environment="XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1"
-Environment=DISPLAY=:0
 ExecStart=/usr/bin/tmux new-session -s %u -d \; neww -t%u:0 weechat
 ExecStop=/usr/bin/tmux kill-session -t %u
 KillMode=none
