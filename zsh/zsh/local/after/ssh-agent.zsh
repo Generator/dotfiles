@@ -6,6 +6,6 @@
 #export SSH_AUTH_SOCK
 
 # Tmux SSH Agent
-if [ -z "$DESKTOP_SESSION" ]; then
+if [ -z "$SSH_AUTH_SOCK" ]; then
 eval $(tmux show-env -s |grep '^SSH_')
 fi

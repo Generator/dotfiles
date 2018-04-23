@@ -1,23 +1,35 @@
 #------------------------------
 # Aliases
 #------------------------------
-alias ...="fdr"
-alias ls="ls --color --group-directories-first -h"
+test "$(which fzf)" && alias ...="fdr"
+test "$(which ranger)" && alias r="ranger"
+test "$(which xdg-open)" && alias open="xdg-open"
+
+alias cp="cp -i"
 alias dd="dd status=progress"
+alias mksrcinfo="makepkg --printsrcinfo > .SRCINFO"
 alias grive="grive --ignore '^CCGANG/STUFF/*'"
 alias bandcamp-dl='bandcamp-dl -r --template="%{artist}/%{album}/%{track}-%{artist} - %{title}"'
 
+# Replace ls for exa
+if [ -x "$(command -v exa)" ]; then 
+   alias ls="exa --group-directories-first --git"
+   alias ll="exa -ghl --group-directories-first --git"
+   alias lla="exa -ghla --group-directories-first --git"
+else 
+   alias ls="ls --color --group-directories-first -h"
+fi
+   
 # Use rsync for cp/mv
 #if [[ -x "$(command -v rsync)" ]]; then
-#alias cp="rsync -aP"
-#alias mv="rsync -aP --remove-source-files"
+#alias rcp="rsync -aP"
+#alias rmv="rsync -aP --remove-source-files"
 #fi
 
 # Lists the ten most used commands.
 alias history-stat="history . | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias webshare='python2 -m SimpleHTTPServer 8080'
-#alias qemuctl='qemuctl -enable-kvm'
-if [ -f /usr/bin/nvim ]; then
+if [ -x "$(command -v nvim)" ]; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
 fi

@@ -71,6 +71,7 @@ source $ZPLUG_HOME/init.zsh
     zplug "plugins/git", from:oh-my-zsh
 
     ## github plugins
+    #zplug 'zplug/zplug', hook-build:'zplug --self-manage'
     zplug "b4b4r07/enhancd", use:init.sh
     zplug "clvv/fasd", as:command, hook-build:"make DESTDIR=$HOME/.bin install"
     zplug "marzocchi/zsh-notify", if:"[[ $OSTYPE == *linux* ]]"
@@ -87,7 +88,7 @@ source $ZPLUG_HOME/init.zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose ; then
-   zplug install
+   LC_ALL=en_US.UTF-8 zplug install
 fi
 
 # Then, source plugins and add commands to $PATH
