@@ -39,13 +39,9 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent quiet yes
 zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_aur
 
-<<<<<<< HEAD
 zstyle :zplug:tag depth 1
-=======
 # Load all local .zsh (issue with zplugv2)
 #for f (/etc/profile.d/*.zsh) { source $f }
-for f (~/.zsh/local/*.zsh) { source $f }
->>>>>>> zplug2
 
 #------------------------------
 # zplug
@@ -102,10 +98,6 @@ zplug load
     options[extended_glob]=$eg
     
 # keybind zsh-autosuggestions
-bindkey '^F' autosuggest-accept    
-<<<<<<< HEAD
-=======
-
-# Load all local [after] .zsh (issue with zplugv2)
+bindkey '^F' autosuggest-accept
+## Load all local [after] .zsh (issue with zplugv2)
 for f (~/.zsh/local/after/*.zsh) { source $f }
->>>>>>> zplug2
