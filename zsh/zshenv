@@ -1,14 +1,14 @@
 typeset -U path
-if [ -d ~/.gem/ruby/*/bin ]; then
- path=(~/.gem/ruby/*/bin $path)
+#if [ -d $HOME/.gem/ruby/*/bin ]; then
+# path=($HOME/.gem/ruby/*/bin $path)
+#fi
+
+if [ -d $HOME/bin ]; then
+ path=($HOME/bin $path)
 fi
 
-if [ -d ~/bin ]; then
- path=(~/bin $path)
-fi
-
-fi [ -d ~/.bin ]; then
- path=(~/.bin $path)
+if [ -d $HOME/.bin ]; then
+ path=($HOME/.bin $path)
 fi
 
 if [ -f /usr/bin/nvim ]; then
