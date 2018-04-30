@@ -24,7 +24,7 @@ bash/bash_aliases
 #ack/ackrc
 #aptitude
 aria2
-#bin:.local/bin
+bin
 #ctags/ctags
 #cmus
 #curl/curlrc
