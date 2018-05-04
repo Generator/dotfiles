@@ -62,8 +62,8 @@ source $ZPLUG_HOME/init.zsh
 
     # Local plugins
     #zplug "/etc/profile.d/", use:"*.zsh", from:local, defer:3
-    #zplug "~/.zsh/local", use:"*.zsh", from:local, defer:3
-    #zplug "~/.zsh/local/after", use:"*.zsh", from:local, defer:3
+    zplug "~/.zsh/local", use:"*.zsh", from:local, defer:3
+    zplug "~/.zsh/local/after", use:"*.zsh", from:local, defer:3
 
     ## oh-my-zsh plugins
     zplug "plugins/command-not-found", from:oh-my-zsh
@@ -99,5 +99,3 @@ zplug load
     
 # keybind zsh-autosuggestions
 bindkey '^F' autosuggest-accept
-## Load all local [after] .zsh (issue with zplugv2)
-for f (~/.zsh/local/after/*.zsh) { source $f }

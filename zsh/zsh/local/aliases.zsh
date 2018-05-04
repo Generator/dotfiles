@@ -47,6 +47,7 @@ alias ssh='[ -n "$TMUX" ] && eval $(tmux show-env -s |grep "^SSH_"); /usr/bin/ss
 alias wrt160n='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@wrt160n.lan'
 alias wnr3500l="ssh root@wnr3500l.lan -t tmux a"
 alias thinkpad='ssh aj@thinkpad.lan'
+alias A300='ssh gen@A300.lan'
 alias minicom='minicom -c on'
 alias vboxserial='minicom -D unix\#/tmp/vboxS0'
 

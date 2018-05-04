@@ -2,7 +2,11 @@
 # Other sources
 #------------------------------
 source ~/.zsh/zplugrc
-#source ~/.zsh/zplugrc-v2
+
+#------------------------------
+# Load all local .zsh (issue with zplugv2+tmux)
+#------------------------------
+for f (~/.zsh/local/*.zsh) { source $f }
 
 #------------------------------
 # setup options
@@ -35,12 +39,6 @@ setopt unset             # don't error out when unset parameters are used
 autoload -Uz compinit
 compinit
 
-#zmodload -ap zsh/parameter parameters
-#zmodload zsh/complist
-#autoload -Uz compinit promptinit bashcompinit
-#compinit
-#promptinit
-#bashcompinit
 zstyle :compinstall filename '${HOME}/.zshrc'
 zstyle ':completion:*:pacman:*' force-list always
 zstyle ':completion:*:*:pacman:*' menu yes select
@@ -92,3 +90,8 @@ setopt HIST_BEEP               # Beep when accessing non-existent history.
 BASE16_THEME="default"
 BASE16_SHELL="$HOME/.dotfiles/shell/colors/base16-shell/base16-$BASE16_THEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+#------------------------------
+# Load all local [after] .zsh (issue with zplugv2+tmux)
+#------------------------------
+for f (~/.zsh/local/after/*.zsh) { source $f }
